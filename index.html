@@ -3,43 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>索涵智能科技 | 广播电视系统集成专家</title>
+    <title>上海索涵智能科技有限公司 - 互惠双赢·合作创新</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 0; }
-        header { background: #1a1a1a; color: #fff; padding: 60px 20px; text-align: center; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        h2 { border-left: 4px solid #1a1a1a; padding-left: 15px; margin-top: 50px; }
-        .footer { text-align: center; font-size: 0.9em; color: #777; padding: 40px; border-top: 1px solid #eee; }
-        .contact-info { background: #f9f9f9; padding: 20px; border-radius: 5px; }
+        /* ================= 全局样式 ================= */
+        :root { --main-black: #000; --main-white: #fff; --text-gray: #666; --bg-gray: #f9f9f9; --accent-yellow: #eebd48; }
+        body { font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.8; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 32px; font-weight: normal; margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: #999; margin: 15px auto 0; }
+        section { padding: 80px 0; }
+
+        /* ================= 导航栏 ================= */
+        nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
+        .nav-inner { display: flex; justify-content: center; align-items: center; height: 70px; gap: 40px; font-size: 15px; }
+        .nav-inner a:hover { color: #aaa; }
+
+        /* ================= 首屏 Banner ================= */
+        .hero { background: linear-gradient(135deg, #111 0%, #2a1b38 50%, #111 100%); color: var(--main-white); text-align: center; padding: 150px 20px; position: relative; }
+        .hero h1 { font-size: 48px; letter-spacing: 5px; margin-bottom: 10px; font-weight: normal; }
+        .hero p { font-size: 24px; font-weight: 300; letter-spacing: 2px; }
+
+        /* ================= 关于我们 ================= */
+        .about-text { text-align: justify; margin-bottom: 40px; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .about-list p { margin-bottom: 15px; font-size: 14px; color: var(--text-gray); }
+
+        /* ================= 发展历程 ================= */
+        .history-section { background: var(--main-white); text-align: center; padding-top: 60px; }
+        .history-title { font-size: 28px; margin-bottom: 10px; font-weight: normal; }
+        .history-subtitle { font-size: 14px; color: #888; margin-bottom: 40px; }
+        .tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 50px; border-bottom: 1px solid #eee; }
+        .tab { padding: 15px 40px; cursor: pointer; color: #666; transition: all 0.3s; }
+        .tab.active { background-color: var(--accent-yellow); color: #000; font-weight: bold; }
+        .history-content { padding: 40px 0; position: relative; }
+        .history-year { font-size: 48px; font-weight: bold; color: #333; position: relative; z-index: 2; margin-bottom: 20px; }
+        .history-year-bg { font-size: 120px; font-weight: bold; color: #f5f5f5; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1; user-select: none; }
+        .history-desc { position: relative; z-index: 2; font-size: 16px; color: #555; }
+
+        /* ================= 服务领域 ================= */
+        .services-bg { background-color: var(--bg-gray); }
+        .service-item { display: flex; gap: 30px; margin-bottom: 40px; border-bottom: 1px dashed #ddd; padding-bottom: 40px; }
+        .service-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+        .service-img-placeholder { flex: 0 0 250px; height: 160px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999; }
+        .service-content h3 { font-size: 18px; margin: 0 0 15px 0; font-weight: bold; }
+        .service-content p { margin: 0; font-size: 14px; color: #666; text-align: justify; }
+
+        /* ================= 客户案例 ================= */
+        .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
+        .case-card { background: var(--main-white); border: 1px solid #eee; text-align: center; transition: transform 0.3s ease; }
+        .case-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .case-img-placeholder { height: 200px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999; }
+        .case-info { padding: 20px; }
+        .case-info h4 { margin: 0 0 10px 0; font-size: 18px; font-weight: normal; }
+        .case-info p { margin: 0; font-size: 12px; color: #888; }
+
+        /* ================= 联系我们 ================= */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-info h3 { font-size: 18px; margin-bottom: 20px; font-weight: normal; }
+        .form-group { margin-bottom: 20px; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #ddd; box-sizing: border-box; font-family: inherit; }
+        textarea.form-control { height: 120px; resize: vertical; }
+        .btn-submit { background: #6fa8dc; color: #fff; border: none; padding: 12px 30px; cursor: pointer; font-size: 16px; transition: background 0.3s; }
+        .btn-submit:hover { background: #5a8ec0; }
+
+        /* ================= 页脚 ================= */
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; font-size: 13px; }
+        footer p { margin: 5px 0; }
+
+        /* ================= 响应式调整 ================= */
+        @media (max-width: 768px) {
+            .nav-inner { flex-wrap: wrap; height: auto; padding: 15px; gap: 15px; }
+            .hero h1 { font-size: 32px; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .tabs { flex-wrap: wrap; }
+            .tab { padding: 10px 20px; width: 50%; box-sizing: border-box; text-align: center; }
+            .service-item { flex-direction: column; gap: 15px; }
+            .service-img-placeholder { flex: auto; height: 200px; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>索涵智能科技</h1>
-        <p>专业广播电视系统集成与设备解决方案</p>
-    </header>
 
-    <div class="container">
-        <h2>关于我们</h2>
-        <p>这里填写公司的简介。例如：索涵智能科技专注于为广电客户提供高效、稳定的系统集成服务。我们深耕 IP 化技术，为客户实现从采集到演播的端到端解决方案。</p>
-
-        <h2>核心业务</h2>
-        <ul>
-            <li>IP 网络广播电视系统集成</li>
-            <li>专业演播室硬件设备配套</li>
-            <li>系统控制协议与矩阵调度方案</li>
-        </ul>
-
-        <h2>联系方式</h2>
-        <div class="contact-info">
-            <p>如果您有任何业务咨询，请联系我们：</p>
-            <p><strong>邮箱：</strong> contact@suohantech.com</p>
-            <p><strong>地址：</strong> [请填写公司地址]</p>
+    <nav>
+        <div class="nav-inner container">
+            <a href="#home">首页</a>
+            <a href="#about">关于我们</a>
+            <a href="#services">服务领域</a>
+            <a href="#cases">客户案例</a>
+            <a href="#contact">联系我们</a>
+            <a href="en.html" style="color: var(--accent-yellow); font-weight: bold; margin-left: auto;">English</a>
         </div>
-    </div>
+    </nav>
 
-    <div class="footer">
-        © 2026 上海索涵智能科技有限公司 版权所有
-    </div>
+    <section id="home" class="hero">
+        <h1>互惠双赢·合作创新</h1>
+        <p>Mutual benefit and win-win · cooperation innovation</p>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About Us / 关于我们</h2>
+        <div class="about-text">
+            上海索涵智能科技有限公司于2016年成立，是在上海市从事广播电视设备技术领域以及智能科技领域的融合媒体系统服务商。公司是以计算机技术为平台的，以数字视音频软/硬件设备及集成为主的融合媒体设备供应商。我司经营范围包括但不限于：电子产品、摄影器材、通讯设备、照明器材、音响设备、监控设备、显示设备等的批发及零售；计算机信息系统集成；舞台的设计与搭建；装修装饰建设工程的设计与施工。
+            <br><br>
+            公司自成立以来，已经成为国内外多家知名品牌签约代理商，并拥有国内多家优质的媒体行业合作伙伴。由我司技术团队设计、施工并调试运行的超高清转播系统在“2020年欧锦赛”、“2022年北京冬奥会”、“东方卫视王牌IP《中国梦之声》”等节目的直播或转播时获得良好表现。
+        </div>
+        <div class="about-grid">
+            <div class="about-list">
+                <p>从手机摄影、社交媒体Vlog / Plog创作，到综艺剧集、影视创作，再到新闻采集、体育盛会和大型晚会等网络化制播，以及虚拟制作等影像产品和解决方案；</p>
+                <p>从耳机、数字音频播放器到回音壁等个人和家庭音频娱乐产品，到专业音频录制及监听等音频产品 and 解决方案；</p>
+                <p>从BRAVIA电视、INZONE电竞显示器等家庭显示产品，到广泛应用于商业、企业、教育、设计、交通、文旅等领域的Crystal LED黑彩晶、BRAVIA商业显示产品、投影机、影视制作及医疗领域的专业级监视器、SRD空间现实显示屏等产品和解决方案；</p>
+                <p>基于“从镜头到客厅，从录制到聆听”产业上建立起来的内容制作经验和技术积累，让索尼更懂创作者意图，并通过领先的技术和产品，高质量、高效的工作流程，忠实还原创作者意图，为最终的内容欣赏者带来感动。</p>
+            </div>
+            <div>
+                <div style="background:#eee; height:300px; display:flex; align-items:center; justify-content:center; color:#999;">
+                    [此处放置操作台设备图片]
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3 class="history-title">植根上海，与客户携手并进！</h3>
+            <p class="history-subtitle">回顾既往 10 年，上海索涵努力耕耘，与客户携手并进，辉煌进程历历在目</p>
+            
+            <div class="tabs">
+                <div class="tab active">专业媒体</div>
+                <div class="tab">娱乐直播</div>
+                <div class="tab">元宇宙</div>
+                <div class="tab">体育赛事</div>
+            </div>
+            
+            <div class="history-content">
+                <div class="history-year-bg">2016</div>
+                <div class="history-year">2016</div>
+                <div class="history-desc">第一套EFP系统交付使用，6讯道高清演播室摄像系统助力《中国梦之声》</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-bg">
+        <div class="container">
+            <h2 class="section-title">服务领域</h2>
+            
+            <div class="service-item">
+                <div class="service-img-placeholder">[电视台&融媒体 图片]</div>
+                <div class="service-content">
+                    <h3>电视台&融媒体</h3>
+                    <p>电视台多种产品服务，支持4K/8K超高清演播室、转播车、专业摄录、监看设备和IP Networked Live等专业媒体解决方案。在媒体融合发展的指引下，以广播级产品为依托提供演播中心直播，微单相机照片/视频新闻采集，会议活动报道完整多元的媒体方案。</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-img-placeholder">[体育赛事 图片]</div>
+                <div class="service-content">
+                    <h3>体育赛事</h3>
+                    <p>体育赛事活动拍摄方案，包括4K/8K超高清系统摄像机，肩扛式广播摄像机Z750/Z580，4K手持摄录一体机Z280V，4K专业监视器，切换台及新近为了满足浅景深电影感画面效果加入的4K云台摄影机FR7和手持电影机FX6、FX3，Alpha7系列微单相机。多机位组合，单机灵活机动让机位切换更灵活。狭小空间(如球员通道)机动性更高；全画幅传感器感光度，宽容度高，观众/球员特写画面具有电影感。</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-img-placeholder">[影视制作 图片]</div>
+                <div class="service-content">
+                    <h3>影视制作</h3>
+                    <p>提供电影/电视剧，综艺/真人秀，电竞/赛事活动直播等不同场景解决方案。从广播系统摄像机到电影摄影机为影视制作行业提供多种解决方案。</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-img-placeholder">[教育院校 图片]</div>
+                <div class="service-content">
+                    <h3>教育院校</h3>
+                    <p>从影视传媒专业所需的新闻采集摄录和监看设备到电影/微电影拍摄，纪录片和广告拍摄，以及学校宣传，课程会议等，还包括智慧教室，校园信息发布系统，云课堂直播等应用的多种产品解决方案。</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-img-placeholder">[电商直播 图片]</div>
+                <div class="service-content">
+                    <h3>电商直播</h3>
+                    <p>提供中大型现场活动，明星直播间，小型店铺直播间，不同机位数量选择的产品方案。搭配索尼麦克风组合成为高画质，高清晰度的电商直播。网络直播作为日益显著的信息触达方式，被越来越多的消费者所接受。依托于电商和社交平台的直播间，以即时观看，即时互动的优势，成为商品和服务选择的重要渠道。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases" class="container">
+        <h2 class="section-title">客户案例</h2>
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-img-placeholder">[跨年演唱会图片]</div>
+                <div class="case-info">
+                    <h4>江苏卫视2023年跨年演唱会</h4>
+                    <p>以「我们」为「奋斗」作序 江苏卫视2023跨年演唱会震撼开唱</p>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-img-placeholder">[超高清转播车图片]</div>
+                <div class="case-info">
+                    <h4>超高清转播车</h4>
+                    <p>专业系统集成方案</p>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-img-placeholder">[4K影视中心图片]</div>
+                <div class="case-info">
+                    <h4>上海中学4K影视中心</h4>
+                    <p>校园演播室建设方案</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="services-bg">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="font-size:24px; margin-bottom:30px; line-height: 1.8;">
+                        地址：上海市徐汇区桂平路481号2号楼310室<br><br>
+                        电话：021-54019890<br><br>
+                        邮箱：info@suohantech.com
+                    </h3>
+                </div>
+                <div>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="留言标题">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="留言内容"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="联系邮箱">
+                        </div>
+                        <button type="button" class="btn-submit">提交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>版权所有：上海索涵智能科技有限公司</p>
+        <p>沪ICP备2023018717号</p>
+        <p>本网站支持 IPv6</p>
+    </footer>
+
 </body>
 </html>
