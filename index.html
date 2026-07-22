@@ -15,10 +15,20 @@
         .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: #999; margin: 15px auto 0; }
         section { padding: 80px 0; }
 
-        /* ================= 导航栏 ================= */
+        /* ================= 导航栏 (包含Logo优化) ================= */
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
-        .nav-inner { display: flex; justify-content: center; align-items: center; height: 70px; gap: 40px; font-size: 15px; }
-        .nav-inner a:hover { color: #aaa; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
+        
+        /* Logo 样式 */
+        .logo-container { display: flex; align-items: center; }
+        .logo-container img { height: 40px; /* 您可以根据实际Logo比例调整这个高度 */ max-width: 200px; object-fit: contain; }
+        
+        /* 中间导航链接样式 */
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a:hover { color: #aaa; }
+        
+        /* 右侧语言切换样式 */
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
         /* ================= 首屏 Banner ================= */
         .hero { background: linear-gradient(135deg, #111 0%, #2a1b38 50%, #111 100%); color: var(--main-white); text-align: center; padding: 150px 20px; position: relative; }
@@ -74,8 +84,9 @@
 
         /* ================= 响应式调整 ================= */
         @media (max-width: 768px) {
-            .nav-inner { flex-wrap: wrap; height: auto; padding: 15px; gap: 15px; }
-            .hero h1 { font-size: 32px; }
+            .nav-inner { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .lang-switch { text-align: center; }
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
             .cases-grid { grid-template-columns: 1fr; }
             .tabs { flex-wrap: wrap; }
@@ -87,22 +98,37 @@
 </head>
 <body>
 
+    <!-- 导航栏 -->
     <nav>
         <div class="nav-inner container">
-            <a href="#home">首页</a>
-            <a href="#about">关于我们</a>
-            <a href="#services">服务领域</a>
-            <a href="#cases">客户案例</a>
-            <a href="#contact">联系我们</a>
-            <a href="en.html" style="color: var(--accent-yellow); font-weight: bold; margin-left: auto;">English</a>
+            <!-- 左侧 Logo -->
+            <a href="#home" class="logo-container">
+                <!-- 请将 "logo.png" 替换为您上传到 GitHub 的真实 Logo 文件名 -->
+                <!-- 如果暂时没有Logo图片，可以先用文字代替，如：<span style="font-size:20px; font-weight:bold;">索涵智能</span> -->
+                <img src="logo.png" alt="上海索涵智能科技有限公司">
+            </a>
+            
+            <!-- 中间 导航链接 -->
+            <div class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#about">关于我们</a>
+                <a href="#services">服务领域</a>
+                <a href="#cases">客户案例</a>
+                <a href="#contact">联系我们</a>
+            </div>
+
+            <!-- 右侧 语言切换 -->
+            <a href="en.html" class="lang-switch">English</a>
         </div>
     </nav>
 
+    <!-- 首屏横幅 -->
     <section id="home" class="hero">
         <h1>互惠双赢·合作创新</h1>
         <p>Mutual benefit and win-win · cooperation innovation</p>
     </section>
 
+    <!-- 关于我们 -->
     <section id="about" class="container">
         <h2 class="section-title">About Us / 关于我们</h2>
         <div class="about-text">
@@ -124,6 +150,7 @@
             </div>
         </div>
 
+        <!-- 发展历程 -->
         <div class="history-section">
             <h3 class="history-title">植根上海，与客户携手并进！</h3>
             <p class="history-subtitle">回顾既往 10 年，上海索涵努力耕耘，与客户携手并进，辉煌进程历历在目</p>
@@ -143,6 +170,7 @@
         </div>
     </section>
 
+    <!-- 服务领域 -->
     <section id="services" class="services-bg">
         <div class="container">
             <h2 class="section-title">服务领域</h2>
@@ -189,6 +217,7 @@
         </div>
     </section>
 
+    <!-- 客户案例 -->
     <section id="cases" class="container">
         <h2 class="section-title">客户案例</h2>
         <div class="cases-grid">
@@ -216,6 +245,7 @@
         </div>
     </section>
 
+    <!-- 联系我们 -->
     <section id="contact" class="services-bg">
         <div class="container">
             <h2 class="section-title">联系我们</h2>
@@ -245,6 +275,7 @@
         </div>
     </section>
 
+    <!-- 页脚 -->
     <footer>
         <p>版权所有：上海索涵智能科技有限公司</p>
         <p>沪ICP备2023018717号</p>
