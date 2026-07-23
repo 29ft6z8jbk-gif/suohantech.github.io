@@ -24,8 +24,54 @@
         .nav-links a:hover { color: #aaa; }
         .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
-        /* ================= Hero Banner ================= */
-        .hero { background: linear-gradient(135deg, #111 0%, #2a1b38 50%, #111 100%); color: var(--main-white); text-align: center; padding: 150px 20px; position: relative; }
+        /* ================= Hero Banner (Slideshow Background) ================= */
+        .hero { 
+            position: relative;
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--main-white);
+            background-color: #111;
+        }
+        .bg-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slide.active { opacity: 1; }
+        .bg-slideshow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
         .hero h1 { font-size: 48px; letter-spacing: 3px; margin-bottom: 10px; font-weight: normal; }
         .hero p { font-size: 22px; font-weight: 300; letter-spacing: 1px; }
 
@@ -137,9 +183,17 @@
         </div>
     </nav>
 
+    <!-- Hero Banner (Slideshow Background) -->
     <section id="home" class="hero">
-        <h1>Mutual Benefit & Win-Win · Cooperative Innovation</h1>
-        <p>Shanghai Suohan Technology Co., Ltd.</p>
+        <div class="bg-slideshow">
+            <div class="slide active" style="background-image: url('image1.jpg');"></div>
+            <div class="slide" style="background-image: url('image2.jpg');"></div>
+            <div class="slide" style="background-image: url('image3.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Mutual Benefit & Win-Win · Cooperative Innovation</h1>
+            <p>Shanghai Suohan Technology Co., Ltd.</p>
+        </div>
     </section>
 
     <section id="about" class="container">
@@ -210,7 +264,6 @@
     <section id="services" class="services-bg">
         <div class="container">
             <h2 class="section-title">Service Areas</h2>
-            
             <div class="service-item">
                 <img src="service-tv.jpg" alt="TV Stations" class="service-img">
                 <div class="service-content">
@@ -390,6 +443,18 @@
                 document.getElementById('history-' + index).style.display = 'block';
             });
         });
+
+        const slides = document.querySelectorAll('.bg-slideshow .slide');
+        let currentIndex = 0;
+        const intervalTime = 4000;
+
+        function nextSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextSlide, intervalTime);
     </script>
 </body>
 </html>
