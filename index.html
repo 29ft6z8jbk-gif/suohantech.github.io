@@ -21,7 +21,7 @@
         
         /* Logo 样式 */
         .logo-container { display: flex; align-items: center; }
-        .logo-container img { height: 60px; /* 您可以根据实际Logo比例调整这个高度 */ max-width: 300px; object-fit: contain; }
+        .logo-container img { height: 60px; max-width: 300px; object-fit: contain; }
         
         /* 中间导航链接样式 */
         .nav-links { display: flex; gap: 40px; }
@@ -45,7 +45,7 @@
         .history-title { font-size: 28px; margin-bottom: 10px; font-weight: normal; }
         .history-subtitle { font-size: 14px; color: #888; margin-bottom: 40px; }
         .tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 50px; border-bottom: 1px solid #eee; }
-        .tab { padding: 15px 40px; cursor: pointer; color: #666; transition: all 0.3s; }
+        .tab { padding: 15px 30px; cursor: pointer; color: #666; transition: all 0.3s; } /* 稍微调小了一点间距以容纳更多按键 */
         .tab.active { background-color: var(--accent-yellow); color: #000; font-weight: bold; }
         .history-content { padding: 40px 0; position: relative; }
         .history-year { font-size: 48px; font-weight: bold; color: #333; position: relative; z-index: 2; margin-bottom: 20px; }
@@ -56,15 +56,15 @@
         .services-bg { background-color: var(--bg-gray); }
         .service-item { display: flex; gap: 30px; margin-bottom: 40px; border-bottom: 1px dashed #ddd; padding-bottom: 40px; }
         .service-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-        .service-img-placeholder { flex: 0 0 250px; height: 160px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999; }
+        .service-img { flex: 0 0 250px; height: 160px; object-fit: cover; border-radius: 8px; background: #e0e0e0; }
         .service-content h3 { font-size: 18px; margin: 0 0 15px 0; font-weight: bold; }
         .service-content p { margin: 0; font-size: 14px; color: #666; text-align: justify; }
 
         /* ================= 客户案例 ================= */
         .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
-        .case-card { background: var(--main-white); border: 1px solid #eee; text-align: center; transition: transform 0.3s ease; }
+        .case-card { background: var(--main-white); border: 1px solid #eee; text-align: center; transition: transform 0.3s ease; border-radius: 8px; overflow: hidden; }
         .case-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .case-img-placeholder { height: 200px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999; }
+        .case-img { width: 100%; height: 200px; object-fit: cover; background: #e0e0e0; }
         .case-info { padding: 20px; }
         .case-info h4 { margin: 0 0 10px 0; font-size: 18px; font-weight: normal; }
         .case-info p { margin: 0; font-size: 12px; color: #888; }
@@ -90,9 +90,9 @@
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
             .cases-grid { grid-template-columns: 1fr; }
             .tabs { flex-wrap: wrap; }
-            .tab { padding: 10px 20px; width: 50%; box-sizing: border-box; text-align: center; }
+            .tab { padding: 10px 20px; width: 33.33%; box-sizing: border-box; text-align: center; }
             .service-item { flex-direction: column; gap: 15px; }
-            .service-img-placeholder { flex: auto; height: 200px; }
+            .service-img { flex: auto; height: 200px; width: 100%; }
         }
     </style>
 </head>
@@ -103,8 +103,6 @@
         <div class="nav-inner container">
             <!-- 左侧 Logo -->
             <a href="#home" class="logo-container">
-                <!-- 请将 "logo.png" 替换为您上传到 GitHub 的真实 Logo 文件名 -->
-                <!-- 如果暂时没有Logo图片，可以先用文字代替，如：<span style="font-size:20px; font-weight:bold;">索涵智能</span> -->
                 <img src="logo.png" alt="上海索涵智能科技有限公司">
             </a>
             
@@ -143,7 +141,7 @@
                 <p>从BRAVIA电视、INZONE电竞显示器等家庭显示产品，到广泛应用于商业、企业、教育、设计、交通、文旅等领域的Crystal LED黑彩晶、BRAVIA商业显示产品、投影机、影视制作及医疗领域的专业级监视器、SRD空间现实显示屏等产品和解决方案；</p>
                 <p>基于“从镜头到客厅，从录制到聆听”产业上建立起来的内容制作经验和技术积累，让索尼更懂创作者意图，并通过领先的技术和产品，高质量、高效的工作流程，忠实还原创作者意图，为最终的内容欣赏者带来感动。</p>
             </div>
-                       <div>
+            <div>
                 <img src="about-console.jpg" alt="介绍图片" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
             </div>
         </div>
@@ -155,15 +153,54 @@
             
             <div class="tabs">
                 <div class="tab active">专业媒体</div>
+                <!-- 新增：传媒出海 -->
+                <div class="tab">传媒出海</div>
                 <div class="tab">娱乐直播</div>
                 <div class="tab">元宇宙</div>
                 <div class="tab">体育赛事</div>
+                <div class="tab">维保服务</div>
             </div>
             
-            <div class="history-content">
+            <!-- 内容区域 1：专业媒体 (默认显示) -->
+            <div class="history-content" id="history-0" style="display: block;">
                 <div class="history-year-bg">2016</div>
                 <div class="history-year">2016</div>
-                <div class="history-desc">第一套EFP系统交付使用，6讯道高清演播室摄像系统助力《中国梦之声》</div>
+                <div class="history-desc">第一套EFP系统交付使用，6讯道高清演播室摄像系统助力东方卫视</div>
+            </div>
+
+            <!-- 内容区域 2：传媒出海 (新增内容，默认隐藏) -->
+            <div class="history-content" id="history-1" style="display: none;">
+                <div class="history-year-bg">2019</div>
+                <div class="history-year">2019</div>
+                <div class="history-desc">首次为海外用户新加坡国家电视台MediaCrop交付10CH全高清电视转播车</div>
+            </div>
+
+            <!-- 内容区域 3：娱乐直播 (默认隐藏) -->
+            <div class="history-content" id="history-2" style="display: none;">
+                <div class="history-year-bg">2019</div>
+                <div class="history-year">2019</div>
+                <div class="history-desc">为腾讯QQ音乐建立《见面吧电台》节目直播系统、为天猫搭建《天猫超级直播间》</div>
+            </div>
+
+            <!-- 内容区域 4：体育赛事 (默认隐藏) -->
+            <div class="history-content" id="history-3" style="display: none;">
+                <div class="history-year-bg">2020</div>
+                <div class="history-year">2020</div>
+                <div class="history-desc">助力咪咕视讯搭建全IP化4K转播系统</div>
+            </div>
+
+            <!-- 内容区域 5：元宇宙 (默认隐藏) -->
+            <div class="history-content" id="history-4" style="display: none;">
+                <div class="history-year-bg">2023</div>
+                <div class="history-year">2023</div>
+                <div class="history-desc">为SMT提供元宇宙技术赋能平台超高清设备</div>
+            </div>
+
+            <!-- 内容区域 6：维保服务 (默认隐藏) -->
+            <div class="history-content" id="history-5" style="display: none;">
+                <div class="history-year-bg">2023</div>
+                <div class="history-year">2023</div>
+                <div class="history-desc">开始提供专业的系统维护服务以及设备的维保服务</div>
             </div>
         </div>
     </section>
@@ -174,7 +211,7 @@
             <h2 class="section-title">服务领域</h2>
             
             <div class="service-item">
-                <div class="service-img-placeholder">[电视台&融媒体 图片]</div>
+                <img src="service-tv.jpg" alt="电视台&融媒体" class="service-img">
                 <div class="service-content">
                     <h3>电视台&融媒体</h3>
                     <p>电视台多种产品服务，支持4K/8K超高清演播室、转播车、专业摄录、监看设备和IP Networked Live等专业媒体解决方案。在媒体融合发展的指引下，以广播级产品为依托提供演播中心直播，微单相机照片/视频新闻采集，会议活动报道完整多元的媒体方案。</p>
@@ -182,7 +219,7 @@
             </div>
 
             <div class="service-item">
-                <div class="service-img-placeholder">[体育赛事 图片]</div>
+                <img src="service-sports.jpg" alt="体育赛事" class="service-img">
                 <div class="service-content">
                     <h3>体育赛事</h3>
                     <p>体育赛事活动拍摄方案，包括4K/8K超高清系统摄像机，肩扛式广播摄像机Z750/Z580，4K手持摄录一体机Z280V，4K专业监视器，切换台及新近为了满足浅景深电影感画面效果加入的4K云台摄影机FR7和手持电影机FX6、FX3，Alpha7系列微单相机。多机位组合，单机灵活机动让机位切换更灵活。狭小空间(如球员通道)机动性更高；全画幅传感器感光度，宽容度高，观众/球员特写画面具有电影感。</p>
@@ -190,7 +227,7 @@
             </div>
 
             <div class="service-item">
-                <div class="service-img-placeholder">[影视制作 图片]</div>
+                <img src="service-film.jpg" alt="影视制作" class="service-img">
                 <div class="service-content">
                     <h3>影视制作</h3>
                     <p>提供电影/电视剧，综艺/真人秀，电竞/赛事活动直播等不同场景解决方案。从广播系统摄像机到电影摄影机为影视制作行业提供多种解决方案。</p>
@@ -198,7 +235,7 @@
             </div>
 
             <div class="service-item">
-                <div class="service-img-placeholder">[教育院校 图片]</div>
+                <img src="service-education.jpg" alt="教育院校" class="service-img">
                 <div class="service-content">
                     <h3>教育院校</h3>
                     <p>从影视传媒专业所需的新闻采集摄录和监看设备到电影/微电影拍摄，纪录片和广告拍摄，以及学校宣传，课程会议等，还包括智慧教室，校园信息发布系统，云课堂直播等应用的多种产品解决方案。</p>
@@ -206,7 +243,7 @@
             </div>
 
             <div class="service-item">
-                <div class="service-img-placeholder">[电商直播 图片]</div>
+                <img src="service-ecommerce.jpg" alt="电商直播" class="service-img">
                 <div class="service-content">
                     <h3>电商直播</h3>
                     <p>提供中大型现场活动，明星直播间，小型店铺直播间，不同机位数量选择的产品方案。搭配索尼麦克风组合成为高画质，高清晰度的电商直播。网络直播作为日益显著的信息触达方式，被越来越多的消费者所接受。依托于电商和社交平台的直播间，以即时观看，即时互动的优势，成为商品和服务选择的重要渠道。</p>
@@ -220,21 +257,21 @@
         <h2 class="section-title">客户案例</h2>
         <div class="cases-grid">
             <div class="case-card">
-                <div class="case-img-placeholder">[跨年演唱会图片]</div>
+                <img src="case-concert.jpg" alt="江苏卫视2023年跨年演唱会" class="case-img">
                 <div class="case-info">
                     <h4>江苏卫视2023年跨年演唱会</h4>
                     <p>以「我们」为「奋斗」作序 江苏卫视2023跨年演唱会震撼开唱</p>
                 </div>
             </div>
             <div class="case-card">
-                <div class="case-img-placeholder">[超高清转播车图片]</div>
+                <img src="case-obvan.jpg" alt="超高清转播车" class="case-img">
                 <div class="case-info">
                     <h4>超高清转播车</h4>
                     <p>专业系统集成方案</p>
                 </div>
             </div>
             <div class="case-card">
-                <div class="case-img-placeholder">[4K影视中心图片]</div>
+                <img src="case-studio.jpg" alt="上海中学4K影视中心" class="case-img">
                 <div class="case-info">
                     <h4>上海中学4K影视中心</h4>
                     <p>校园演播室建设方案</p>
@@ -280,5 +317,20 @@
         <p>本网站支持 IPv6</p>
     </footer>
 
+    <!-- 负责页面交互的 JavaScript 脚本 (控制历程选项卡切换) -->
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.history-content');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.style.display = 'none');
+                
+                tab.classList.add('active');
+                document.getElementById('history-' + index).style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
