@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shanghai Suohan Technology Co., Ltd. - Mutual Benefit & Win-Win · Cooperative Innovation</title>
+    <title>Shanghai Suohan Technology Co., Ltd. - Mutual Benefit & Win-Win</title>
     <style>
         /* ================= Global Styles ================= */
         :root { --main-black: #000; --main-white: #fff; --text-gray: #666; --bg-gray: #f9f9f9; --accent-yellow: #eebd48; }
@@ -18,16 +18,10 @@
         /* ================= Navbar ================= */
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
-        
-        /* Logo Styles */
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; }
-        
-        /* Navigation Links */
         .nav-links { display: flex; gap: 40px; }
         .nav-links a:hover { color: #aaa; }
-        
-        /* Language Switcher */
         .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
         /* ================= Hero Banner ================= */
@@ -40,7 +34,7 @@
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .about-list p { margin-bottom: 15px; font-size: 14px; color: var(--text-gray); }
 
-        /* ================= Development History ================= */
+        /* ================= History ================= */
         .history-section { background: var(--main-white); text-align: center; padding-top: 60px; }
         .history-title { font-size: 28px; margin-bottom: 10px; font-weight: normal; }
         .history-subtitle { font-size: 14px; color: #888; margin-bottom: 40px; }
@@ -52,12 +46,10 @@
         .history-year-bg { font-size: 120px; font-weight: bold; color: #f5f5f5; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1; user-select: none; }
         .history-desc { position: relative; z-index: 2; font-size: 16px; color: #555; max-width: 800px; margin: 0 auto; }
 
-        /* ================= Service Areas ================= */
+        /* ================= Services ================= */
         .services-bg { background-color: var(--bg-gray); }
         .service-item { display: flex; gap: 30px; margin-bottom: 40px; border-bottom: 1px dashed #ddd; padding-bottom: 40px; }
         .service-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-        
-        /* ---------- 核心修复区域：强制图片大小统一且不变形 ---------- */
         .service-img { 
             width: 280px !important; 
             height: 180px !important; 
@@ -66,21 +58,41 @@
             border-radius: 8px; 
             background: #e0e0e0; 
         }
-        /* -------------------------------------------------------- */
-
         .service-content h3 { font-size: 18px; margin: 0 0 15px 0; font-weight: bold; }
         .service-content p { margin: 0; font-size: 14px; color: #666; text-align: justify; }
 
-        /* ================= Client Cases ================= */
-        .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
-        .case-card { background: var(--main-white); border: 1px solid #eee; text-align: center; transition: transform 0.3s ease; border-radius: 8px; overflow: hidden; }
-        .case-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        /* ================= Cases Scroll ================= */
+        .cases-scroll-wrapper { width: 100%; overflow: hidden; padding: 20px 0; position: relative; }
+        .cases-track {
+            display: inline-flex;
+            gap: 30px;
+            animation: marquee-scroll 30s linear infinite; 
+        }
+        .cases-track:hover { animation-play-state: paused; }
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 15px)); } 
+        }
+        .case-card {
+            display: block;
+            width: 350px; 
+            flex-shrink: 0; 
+            background: var(--main-white);
+            border: 1px solid #eee;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none; 
+            color: inherit;
+        }
+        .case-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
         .case-img { width: 100%; height: 200px; object-fit: cover; background: #e0e0e0; }
         .case-info { padding: 20px; }
-        .case-info h4 { margin: 0 0 10px 0; font-size: 18px; font-weight: normal; }
-        .case-info p { margin: 0; font-size: 12px; color: #888; }
+        .case-info h4 { margin: 0 0 10px 0; font-size: 18px; font-weight: bold; color: #333; }
+        .case-info p { margin: 0; font-size: 13px; color: #666; white-space: normal; }
 
-        /* ================= Contact Us ================= */
+        /* ================= Contact ================= */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .contact-info h3 { font-size: 18px; margin-bottom: 20px; font-weight: normal; }
         .form-group { margin-bottom: 20px; }
@@ -93,17 +105,17 @@
         footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; font-size: 13px; }
         footer p { margin: 5px 0; }
 
-        /* ================= Responsive Adjustments ================= */
+        /* ================= Responsive ================= */
         @media (max-width: 768px) {
             .nav-inner { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
             .lang-switch { text-align: center; }
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
-            .cases-grid { grid-template-columns: 1fr; }
             .tabs { flex-wrap: wrap; }
             .tab { padding: 10px 15px; width: 33.33%; box-sizing: border-box; text-align: center; font-size: 13px; }
             .service-item { flex-direction: column; gap: 15px; }
             .service-img { flex: auto !important; height: 200px !important; width: 100% !important; }
+            .case-card { width: 280px; }
         }
     </style>
 </head>
@@ -111,7 +123,7 @@
 
     <nav>
         <div class="nav-inner container">
-            <a href="#home" class="logo-container">
+            <a href="en.html" class="logo-container">
                 <img src="logo.png" alt="Shanghai Suohan Technology Co., Ltd.">
             </a>
             <div class="nav-links">
@@ -135,14 +147,14 @@
         <div class="about-text">
             Founded in 2016, Shanghai Suohan Technology Co., Ltd. is a convergent media system service provider operating in the fields of radio & television equipment technology and intelligent technology in Shanghai. Powered by computer technology, the company is a convergent media equipment supplier specializing in digital audio/video software, hardware, and system integration. Our business scope includes but is not limited to: wholesale and retail of electronic products, photographic equipment, communication equipment, lighting equipment, audio equipment, monitoring equipment, display devices, etc.; computer information system integration; stage design and construction; and design and construction of decoration and renovation engineering projects.
             <br><br>
-            Since its inception, the company has become an authorized dealer for many well-known domestic and international brands, establishing solid partnerships across the domestic media industry. The ultra-high-definition (UHD) broadcasting systems designed, constructed, and commissioned by our technical team have delivered outstanding performance during live broadcasts and transmissions for major events, including the UEFA Euro 2020, the Beijing 2022 Winter Olympics, and Dragon TV's flagship IP show "Chinese Idol".
+            Since its inception, the company has become an authorized dealer for many well-known domestic and international brands, establishing solid partnerships across the domestic media industry. The ultra-high-definition (UHD) broadcasting systems designed, constructed, and commissioned by our technical team have delivered outstanding performance during live broadcasts and transmissions for major events.
         </div>
         <div class="about-grid">
             <div class="about-list">
                 <p>From mobile photography and social media Vlog/Plog content creation to variety shows, TV series, film production, news gathering, major sports events, gala networked broadcasting, and virtual production imaging solutions;</p>
                 <p>From personal and home audio entertainment products like headphones, digital audio players, and soundbars to professional audio recording and monitoring equipment and solutions;</p>
                 <p>From home display solutions such as BRAVIA TVs and INZONE gaming monitors to Crystal LED, BRAVIA commercial displays, projectors, professional film/TV production monitors, medical-grade monitors, and Spatial Reality Displays widely used in commercial, enterprise, education, design, transportation, and cultural tourism sectors;</p>
-                <p>Based on content creation experience and technological expertise accumulated across the "Lens to Living Room, Recording to Listening" industry chain, we deeply understand creators' vision, delivering high-quality, efficient workflows and cutting-edge solutions that faithfully reproduce creative intent and inspire audiences.</p>
+                <p>Based on content creation experience and technological expertise accumulated across the "Lens to Living Room, Recording to Listening" industry chain, we deeply understand creators' vision.</p>
             </div>
             <div>
                 <img src="about-console.jpg" alt="About Suohan Tech" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
@@ -159,7 +171,7 @@
                 <div class="tab">Live Entertainment</div>
                 <div class="tab">Sports Events</div>
                 <div class="tab">Metaverse</div>
-                <div class="tab">Maintenance & Services</div>
+                <div class="tab">Maintenance</div>
             </div>
             
             <div class="history-content" id="history-0" style="display: block;">
@@ -167,31 +179,26 @@
                 <div class="history-year">2016</div>
                 <div class="history-desc">Delivered and commissioned our first EFP system, utilizing a 6-channel HD studio camera system to power Dragon TV's flagship show.</div>
             </div>
-
             <div class="history-content" id="history-1" style="display: none;">
                 <div class="history-year-bg">2019</div>
                 <div class="history-year">2019</div>
-                <div class="history-desc">Delivered a 10CH Full HD OB Van to Singapore's national broadcaster, MediaCorp, marking our first milestone in overseas project delivery.</div>
+                <div class="history-desc">Delivered a 10CH Full HD OB Van to Singapore's national broadcaster, MediaCorp.</div>
             </div>
-
             <div class="history-content" id="history-2" style="display: none;">
                 <div class="history-year-bg">2019</div>
                 <div class="history-year">2019</div>
-                <div class="history-desc">Built the live streaming system for Tencent QQ Music's "Meet Station" show and constructed the "Tmall Super Live Studio" for Tmall.</div>
+                <div class="history-desc">Built the live streaming system for Tencent QQ Music's "Meet Station" show and constructed the "Tmall Super Live Studio".</div>
             </div>
-
             <div class="history-content" id="history-3" style="display: none;">
                 <div class="history-year-bg">2020</div>
                 <div class="history-year">2020</div>
                 <div class="history-desc">Supported Migu Video in constructing an all-IP 4K broadcasting system.</div>
             </div>
-
             <div class="history-content" id="history-4" style="display: none;">
                 <div class="history-year-bg">2023</div>
                 <div class="history-year">2023</div>
                 <div class="history-desc">Provided ultra-high-definition equipment for SMT's metaverse technology enablement platform.</div>
             </div>
-
             <div class="history-content" id="history-5" style="display: none;">
                 <div class="history-year-bg">2023</div>
                 <div class="history-year">2023</div>
@@ -205,70 +212,134 @@
             <h2 class="section-title">Service Areas</h2>
             
             <div class="service-item">
-                <img src="service-tv.jpg" alt="TV Stations & Convergent Media" class="service-img">
+                <img src="service-tv.jpg" alt="TV Stations" class="service-img">
                 <div class="service-content">
                     <h3>TV Stations & Convergent Media</h3>
-                    <p>Offering comprehensive product services for TV stations, supporting 4K/8K UHD studios, OB vans, professional recording/monitoring equipment, and IP Networked Live solutions. Guided by media convergence, we leverage broadcast-grade equipment to deliver complete media solutions spanning studio live broadcasting, mirrorless camera news gathering, and conference reporting.</p>
+                    <p>Offering comprehensive product services for TV stations, supporting 4K/8K UHD studios, OB vans, professional recording/monitoring equipment, and IP Networked Live solutions.</p>
                 </div>
             </div>
-
             <div class="service-item">
                 <img src="service-sports.jpg" alt="Sports Events" class="service-img">
                 <div class="service-content">
                     <h3>Sports Events</h3>
-                    <p>Filming solutions for sports events, featuring 4K/8K UHD system cameras, shoulder-mount broadcast cameras Z750/Z580, 4K handheld camcorder Z280V, 4K professional monitors, switchers, and shallow depth-of-field cinematic additions like 4K PTZ camera FR7, handheld cinema cameras FX6/FX3, and Alpha 7 series mirrorless cameras. Multi-camera setups combined with agile single-camera units allow flexible switching and high mobility in tight spaces (such as player tunnels). Full-frame sensors deliver exceptional low-light performance and dynamic range for cinematic close-ups.</p>
+                    <p>Filming solutions for sports events, featuring 4K/8K UHD system cameras, shoulder-mount broadcast cameras Z750/Z580, 4K handheld camcorder Z280V, 4K professional monitors, and switchers.</p>
                 </div>
             </div>
-
             <div class="service-item">
-                <img src="service-film.jpg" alt="Film & TV Production" class="service-img">
+                <img src="service-film.jpg" alt="Film Production" class="service-img">
                 <div class="service-content">
                     <h3>Film & TV Production</h3>
-                    <p>Providing solutions for movies, TV drama series, variety shows, reality TV, esports, and live event broadcasts. From system broadcast cameras to cinema cameras, we empower the film and TV production industry with diverse workflow solutions.</p>
+                    <p>Providing solutions for movies, TV drama series, variety shows, reality TV, esports, and live event broadcasts. From broadcast cameras to cinema cameras.</p>
                 </div>
             </div>
-
             <div class="service-item">
                 <img src="service-education.jpg" alt="Educational Institutions" class="service-img">
                 <div class="service-content">
                     <h3>Educational Institutions</h3>
-                    <p>Product solutions covering everything from news gathering and monitoring equipment for media majors to film/micro-movie production, documentaries, commercial shooting, campus publicity, conference recording, smart classrooms, campus info distribution, and cloud classroom streaming.</p>
+                    <p>Product solutions covering news gathering, film production, documentaries, campus publicity, smart classrooms, and cloud streaming for educational institutions.</p>
                 </div>
             </div>
-
             <div class="service-item">
                 <img src="service-ecommerce.jpg" alt="E-Commerce Live Streaming" class="service-img">
                 <div class="service-content">
                     <h3>E-Commerce Live Streaming</h3>
-                    <p>Tailored options for medium-to-large live events, celebrity live streams, and compact store broadcasting setups with multi-camera configurations. Combined with professional microphone setups, we ensure high-definition visual and audio quality. As live streaming becomes a vital channel for consumer interaction on e-commerce and social platforms, our setups deliver real-time engagement and premium visual experience.</p>
+                    <p>Tailored options for medium-to-large live events, celebrity live streams, and compact store broadcasting setups with multi-camera configurations.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cases" class="container">
+    <section id="cases" class="container" style="max-width: 100%; overflow: hidden;">
         <h2 class="section-title">Client Cases</h2>
-        <div class="cases-grid">
-            <div class="case-card">
-                <img src="case-concert.jpg" alt="Jiangsu TV 2023 New Year's Eve Concert" class="case-img">
-                <div class="case-info">
-                    <h4>JSBC 2023 New Year's Eve Concert</h4>
-                    <p>Powering Jiangsu TV's Spectacular 2023 New Year's Eve Live Concert Broadcast</p>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="case-obvan.jpg" alt="Ultra HD OB Van" class="case-img">
-                <div class="case-info">
-                    <h4>UHD OB Van Integration</h4>
-                    <p>Professional Broadcast System Integration Solution</p>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="case-studio.jpg" alt="Shanghai High School 4K Film Center" class="case-img">
-                <div class="case-info">
-                    <h4>Shanghai High School 4K Film Center</h4>
-                    <p>Campus Studio Design & Construction Solution</p>
-                </div>
+        <div class="cases-scroll-wrapper">
+            <div class="cases-track">
+                <!-- Group 1 -->
+                <a href="case-concert-en.html" target="_blank" class="case-card">
+                    <img src="case-concert.jpg" alt="JSBC New Year Concert" class="case-img">
+                    <div class="case-info">
+                        <h4>JSBC 2023 New Year Concert</h4>
+                        <p>Powering Jiangsu TV's Spectacular Live Concert Broadcast</p>
+                    </div>
+                </a>
+                <a href="case-obvan-en.html" target="_blank" class="case-card">
+                    <img src="case-obvan.jpg" alt="Ultra HD OB Van" class="case-img">
+                    <div class="case-info">
+                        <h4>All-IP UHD OB Van</h4>
+                        <p>Professional SMPTE ST 2110 System Integration & Delivery</p>
+                    </div>
+                </a>
+                <a href="case-studio-en.html" target="_blank" class="case-card">
+                    <img src="case-studio.jpg" alt="Shanghai High School 4K Studio" class="case-img">
+                    <div class="case-info">
+                        <h4>Shanghai High School 4K Center</h4>
+                        <p>High-Standard Campus Studio & Convergent Media Center</p>
+                    </div>
+                </a>
+                <a href="case-esports-en.html" target="_blank" class="case-card">
+                    <img src="case-esports.jpg" alt="Esports Broadcasting" class="case-img">
+                    <div class="case-info">
+                        <h4>Major Esports Broadcasting</h4>
+                        <p>High-Frame-Rate, Low-Latency Esports Transmission Workflow</p>
+                    </div>
+                </a>
+                <a href="case-metaverse-en.html" target="_blank" class="case-card">
+                    <img src="case-metaverse.jpg" alt="Metaverse Virtual Production" class="case-img">
+                    <div class="case-info">
+                        <h4>SMT Metaverse Platform</h4>
+                        <p>Broadcast-Grade Virtual Reality Fusion & Production</p>
+                    </div>
+                </a>
+                <a href="case-theater-en.html" target="_blank" class="case-card">
+                    <img src="case-theater.jpg" alt="Shanghai Grand Theatre 8K" class="case-img">
+                    <div class="case-info">
+                        <h4>Shanghai Grand Theatre 8K</h4>
+                        <p>5G+8K All-IP Ultra HD Theater Broadcasting System</p>
+                    </div>
+                </a>
+
+                <!-- Group 2 for loop -->
+                <a href="case-concert-en.html" target="_blank" class="case-card">
+                    <img src="case-concert.jpg" alt="JSBC New Year Concert" class="case-img">
+                    <div class="case-info">
+                        <h4>JSBC 2023 New Year Concert</h4>
+                        <p>Powering Jiangsu TV's Spectacular Live Concert Broadcast</p>
+                    </div>
+                </a>
+                <a href="case-obvan-en.html" target="_blank" class="case-card">
+                    <img src="case-obvan.jpg" alt="Ultra HD OB Van" class="case-img">
+                    <div class="case-info">
+                        <h4>All-IP UHD OB Van</h4>
+                        <p>Professional SMPTE ST 2110 System Integration & Delivery</p>
+                    </div>
+                </a>
+                <a href="case-studio-en.html" target="_blank" class="case-card">
+                    <img src="case-studio.jpg" alt="Shanghai High School 4K Studio" class="case-img">
+                    <div class="case-info">
+                        <h4>Shanghai High School 4K Center</h4>
+                        <p>High-Standard Campus Studio & Convergent Media Center</p>
+                    </div>
+                </a>
+                <a href="case-esports-en.html" target="_blank" class="case-card">
+                    <img src="case-esports.jpg" alt="Esports Broadcasting" class="case-img">
+                    <div class="case-info">
+                        <h4>Major Esports Broadcasting</h4>
+                        <p>High-Frame-Rate, Low-Latency Esports Transmission Workflow</p>
+                    </div>
+                </a>
+                <a href="case-metaverse-en.html" target="_blank" class="case-card">
+                    <img src="case-metaverse.jpg" alt="Metaverse Virtual Production" class="case-img">
+                    <div class="case-info">
+                        <h4>SMT Metaverse Platform</h4>
+                        <p>Broadcast-Grade Virtual Reality Fusion & Production</p>
+                    </div>
+                </a>
+                <a href="case-theater-en.html" target="_blank" class="case-card">
+                    <img src="case-theater.jpg" alt="Shanghai Grand Theatre 8K" class="case-img">
+                    <div class="case-info">
+                        <h4>Shanghai Grand Theatre 8K</h4>
+                        <p>5G+8K All-IP Ultra HD Theater Broadcasting System</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -279,7 +350,7 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3 style="font-size:20px; margin-bottom:30px; line-height: 2;">
-                        Address: Room 310, Building 2, No. 481 Guiping Road, Xuhui District, Shanghai, China<br><br>
+                        Address: Room 310, Building 2, No. 481 Guiping Road, Xuhui District, Shanghai<br><br>
                         Tel: +86-21-54019890<br><br>
                         Email: info@suohantech.com
                     </h3>
@@ -303,7 +374,7 @@
     </section>
 
     <footer>
-        <p>Copyright © Shanghai Suohan Technology Co., Ltd. All Rights Reserved.</p>
+        <p>Copyright © Shanghai Suohan Technology Co., Ltd.</p>
         <p>ICP Registration: Shanghai ICP No. 2023018717</p>
         <p>This website supports IPv6</p>
     </footer>
@@ -311,12 +382,10 @@
     <script>
         const tabs = document.querySelectorAll('.tab');
         const contents = document.querySelectorAll('.history-content');
-
         tabs.forEach((tab, index) => {
             tab.addEventListener('click', () => {
                 tabs.forEach(t => t.classList.remove('active'));
                 contents.forEach(c => c.style.display = 'none');
-                
                 tab.classList.add('active');
                 document.getElementById('history-' + index).style.display = 'block';
             });
