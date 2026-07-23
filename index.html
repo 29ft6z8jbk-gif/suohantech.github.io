@@ -15,19 +15,13 @@
         .section-title::after { content: ''; display: block; width: 40px; height: 3px; background: #999; margin: 15px auto 0; }
         section { padding: 80px 0; }
 
-        /* ================= 导航栏 (包含Logo优化) ================= */
+        /* ================= 导航栏 ================= */
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
-        
-        /* Logo 样式 */
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; }
-        
-        /* 中间导航链接样式 */
         .nav-links { display: flex; gap: 40px; }
         .nav-links a:hover { color: #aaa; }
-        
-        /* 右侧语言切换样式 */
         .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
         /* ================= 首屏 Banner ================= */
@@ -52,12 +46,10 @@
         .history-year-bg { font-size: 120px; font-weight: bold; color: #f5f5f5; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1; user-select: none; }
         .history-desc { position: relative; z-index: 2; font-size: 16px; color: #555; }
 
-        /* ================= 服务领域 ================= */
+        /* ================= 服务领域 (强制图片大小) ================= */
         .services-bg { background-color: var(--bg-gray); }
         .service-item { display: flex; gap: 30px; margin-bottom: 40px; border-bottom: 1px dashed #ddd; padding-bottom: 40px; }
         .service-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-        
-        /* ---------- 核心修复区域：强制图片大小统一且不变形 ---------- */
         .service-img { 
             width: 280px !important; 
             height: 180px !important; 
@@ -66,19 +58,39 @@
             border-radius: 8px; 
             background: #e0e0e0; 
         }
-        /* -------------------------------------------------------- */
-
         .service-content h3 { font-size: 18px; margin: 0 0 15px 0; font-weight: bold; }
         .service-content p { margin: 0; font-size: 14px; color: #666; text-align: justify; }
 
-        /* ================= 客户案例 ================= */
-        .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
-        .case-card { background: var(--main-white); border: 1px solid #eee; text-align: center; transition: transform 0.3s ease; border-radius: 8px; overflow: hidden; }
-        .case-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        /* ================= 客户案例 (无限滚动跑马灯) ================= */
+        .cases-scroll-wrapper { width: 100%; overflow: hidden; padding: 20px 0; position: relative; }
+        .cases-track {
+            display: inline-flex;
+            gap: 30px;
+            animation: marquee-scroll 30s linear infinite; 
+        }
+        .cases-track:hover { animation-play-state: paused; }
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 15px)); } 
+        }
+        .case-card {
+            display: block;
+            width: 350px; 
+            flex-shrink: 0; 
+            background: var(--main-white);
+            border: 1px solid #eee;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none; 
+            color: inherit;
+        }
+        .case-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
         .case-img { width: 100%; height: 200px; object-fit: cover; background: #e0e0e0; }
         .case-info { padding: 20px; }
-        .case-info h4 { margin: 0 0 10px 0; font-size: 18px; font-weight: normal; }
-        .case-info p { margin: 0; font-size: 12px; color: #888; }
+        .case-info h4 { margin: 0 0 10px 0; font-size: 18px; font-weight: bold; color: #333; }
+        .case-info p { margin: 0; font-size: 13px; color: #666; white-space: normal; }
 
         /* ================= 联系我们 ================= */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
@@ -99,11 +111,11 @@
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
             .lang-switch { text-align: center; }
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
-            .cases-grid { grid-template-columns: 1fr; }
             .tabs { flex-wrap: wrap; }
             .tab { padding: 10px 20px; width: 33.33%; box-sizing: border-box; text-align: center; }
             .service-item { flex-direction: column; gap: 15px; }
             .service-img { flex: auto !important; height: 200px !important; width: 100% !important; }
+            .case-card { width: 280px; }
         }
     </style>
 </head>
@@ -167,31 +179,26 @@
                 <div class="history-year">2016</div>
                 <div class="history-desc">第一套EFP系统交付使用，6讯道高清演播室摄像系统助力东方卫视</div>
             </div>
-
             <div class="history-content" id="history-1" style="display: none;">
                 <div class="history-year-bg">2019</div>
                 <div class="history-year">2019</div>
                 <div class="history-desc">首次为海外用户新加坡国家电视台MediaCrop交付10CH全高清电视转播车</div>
             </div>
-
             <div class="history-content" id="history-2" style="display: none;">
                 <div class="history-year-bg">2019</div>
                 <div class="history-year">2019</div>
                 <div class="history-desc">为腾讯QQ音乐建立《见面吧电台》节目直播系统、为天猫搭建《天猫超级直播间》</div>
             </div>
-
             <div class="history-content" id="history-3" style="display: none;">
                 <div class="history-year-bg">2020</div>
                 <div class="history-year">2020</div>
                 <div class="history-desc">助力咪咕视讯搭建全IP化4K转播系统</div>
             </div>
-
             <div class="history-content" id="history-4" style="display: none;">
                 <div class="history-year-bg">2023</div>
                 <div class="history-year">2023</div>
                 <div class="history-desc">为SMT提供元宇宙技术赋能平台超高清设备</div>
             </div>
-
             <div class="history-content" id="history-5" style="display: none;">
                 <div class="history-year-bg">2023</div>
                 <div class="history-year">2023</div>
@@ -203,7 +210,6 @@
     <section id="services" class="services-bg">
         <div class="container">
             <h2 class="section-title">服务领域</h2>
-            
             <div class="service-item">
                 <img src="service-tv.jpg" alt="电视台&融媒体" class="service-img">
                 <div class="service-content">
@@ -211,7 +217,6 @@
                     <p>电视台多种产品服务，支持4K/8K超高清演播室、转播车、专业摄录、监看设备和IP Networked Live等专业媒体解决方案。在媒体融合发展的指引下，以广播级产品为依托提供演播中心直播，微单相机照片/视频新闻采集，会议活动报道完整多元的媒体方案。</p>
                 </div>
             </div>
-
             <div class="service-item">
                 <img src="service-sports.jpg" alt="体育赛事" class="service-img">
                 <div class="service-content">
@@ -219,7 +224,6 @@
                     <p>体育赛事活动拍摄方案，包括4K/8K超高清系统摄像机，肩扛式广播摄像机Z750/Z580，4K手持摄录一体机Z280V，4K专业监视器，切换台及新近为了满足浅景深电影感画面效果加入的4K云台摄影机FR7和手持电影机FX6、FX3，Alpha7系列微单相机。多机位组合，单机灵活机动让机位切换更灵活。狭小空间(如球员通道)机动性更高；全画幅传感器感光度，宽容度高，观众/球员特写画面具有电影感。</p>
                 </div>
             </div>
-
             <div class="service-item">
                 <img src="service-film.jpg" alt="影视制作" class="service-img">
                 <div class="service-content">
@@ -227,7 +231,6 @@
                     <p>提供电影/电视剧，综艺/真人秀，电竞/赛事活动直播等不同场景解决方案。从广播系统摄像机到电影摄影机为影视制作行业提供多种解决方案。</p>
                 </div>
             </div>
-
             <div class="service-item">
                 <img src="service-education.jpg" alt="教育院校" class="service-img">
                 <div class="service-content">
@@ -235,7 +238,6 @@
                     <p>从影视传媒专业所需的新闻采集摄录和监看设备到电影/微电影拍摄，纪录片和广告拍摄，以及学校宣传，课程会议等，还包括智慧教室，校园信息发布系统，云课堂直播等应用的多种产品解决方案。</p>
                 </div>
             </div>
-
             <div class="service-item">
                 <img src="service-ecommerce.jpg" alt="电商直播" class="service-img">
                 <div class="service-content">
@@ -246,29 +248,97 @@
         </div>
     </section>
 
-    <section id="cases" class="container">
+    <section id="cases" class="container" style="max-width: 100%; overflow: hidden;">
         <h2 class="section-title">客户案例</h2>
-        <div class="cases-grid">
-            <div class="case-card">
-                <img src="case-concert.jpg" alt="江苏卫视2023年跨年演唱会" class="case-img">
-                <div class="case-info">
-                    <h4>江苏卫视2023年跨年演唱会</h4>
-                    <p>以「我们」为「奋斗」作序 江苏卫视2023跨年演唱会震撼开唱</p>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="case-obvan.jpg" alt="超高清转播车" class="case-img">
-                <div class="case-info">
-                    <h4>超高清转播车</h4>
-                    <p>专业系统集成方案</p>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="case-studio.jpg" alt="上海中学4K影视中心" class="case-img">
-                <div class="case-info">
-                    <h4>上海中学4K影视中心</h4>
-                    <p>校园演播室建设方案</p>
-                </div>
+        <div class="cases-scroll-wrapper">
+            <div class="cases-track">
+                <!-- 第 1 组：6个案例 -->
+                <a href="case-concert.html" target="_blank" class="case-card">
+                    <img src="case-concert.jpg" alt="江苏卫视跨年演唱会" class="case-img">
+                    <div class="case-info">
+                        <h4>江苏卫视2023年跨年演唱会</h4>
+                        <p>以「我们」为「奋斗」作序，跨年演唱会震撼开唱</p>
+                    </div>
+                </a>
+                <a href="case-obvan.html" target="_blank" class="case-card">
+                    <img src="case-obvan.jpg" alt="超高清转播车" class="case-img">
+                    <div class="case-info">
+                        <h4>全IP超高清转播车</h4>
+                        <p>专业级SMPTE ST 2110系统集成与交付方案</p>
+                    </div>
+                </a>
+                <a href="case-studio.html" target="_blank" class="case-card">
+                    <img src="case-studio.jpg" alt="上海中学4K影视中心" class="case-img">
+                    <div class="case-info">
+                        <h4>上海中学4K影视中心</h4>
+                        <p>高标准校园演播室及融媒体中心建设方案</p>
+                    </div>
+                </a>
+                <a href="case-esports.html" target="_blank" class="case-card">
+                    <img src="case-esports.jpg" alt="电竞赛事直转播" class="case-img">
+                    <div class="case-info">
+                        <h4>大型电竞赛事直转播</h4>
+                        <p>高帧率、低延迟电竞转播全链路解决方案</p>
+                    </div>
+                </a>
+                <a href="case-metaverse.html" target="_blank" class="case-card">
+                    <img src="case-metaverse.jpg" alt="元宇宙虚拟制作" class="case-img">
+                    <div class="case-info">
+                        <h4>SMT元宇宙虚拟制作平台</h4>
+                        <p>广电级虚拟现实融合拍摄与制作技术赋能</p>
+                    </div>
+                </a>
+                <a href="case-theater.html" target="_blank" class="case-card">
+                    <img src="case-theater.jpg" alt="上海大剧院8K记录" class="case-img">
+                    <div class="case-info">
+                        <h4>上海大剧院8K沉浸式记录</h4>
+                        <p>5G+8K全IP超高清剧场演播与转播系统</p>
+                    </div>
+                </a>
+
+                <!-- 第 2 组：完全复制用于无缝循环 -->
+                <a href="case-concert.html" target="_blank" class="case-card">
+                    <img src="case-concert.jpg" alt="江苏卫视跨年演唱会" class="case-img">
+                    <div class="case-info">
+                        <h4>江苏卫视2023年跨年演唱会</h4>
+                        <p>以「我们」为「奋斗」作序，跨年演唱会震撼开唱</p>
+                    </div>
+                </a>
+                <a href="case-obvan.html" target="_blank" class="case-card">
+                    <img src="case-obvan.jpg" alt="超高清转播车" class="case-img">
+                    <div class="case-info">
+                        <h4>全IP超高清转播车</h4>
+                        <p>专业级SMPTE ST 2110系统集成与交付方案</p>
+                    </div>
+                </a>
+                <a href="case-studio.html" target="_blank" class="case-card">
+                    <img src="case-studio.jpg" alt="上海中学4K影视中心" class="case-img">
+                    <div class="case-info">
+                        <h4>上海中学4K影视中心</h4>
+                        <p>高标准校园演播室及融媒体中心建设方案</p>
+                    </div>
+                </a>
+                <a href="case-esports.html" target="_blank" class="case-card">
+                    <img src="case-esports.jpg" alt="电竞赛事直转播" class="case-img">
+                    <div class="case-info">
+                        <h4>大型电竞赛事直转播</h4>
+                        <p>高帧率、低延迟电竞转播全链路解决方案</p>
+                    </div>
+                </a>
+                <a href="case-metaverse.html" target="_blank" class="case-card">
+                    <img src="case-metaverse.jpg" alt="元宇宙虚拟制作" class="case-img">
+                    <div class="case-info">
+                        <h4>SMT元宇宙虚拟制作平台</h4>
+                        <p>广电级虚拟现实融合拍摄与制作技术赋能</p>
+                    </div>
+                </a>
+                <a href="case-theater.html" target="_blank" class="case-card">
+                    <img src="case-theater.jpg" alt="上海大剧院8K记录" class="case-img">
+                    <div class="case-info">
+                        <h4>上海大剧院8K沉浸式记录</h4>
+                        <p>5G+8K全IP超高清剧场演播与转播系统</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -311,12 +381,10 @@
     <script>
         const tabs = document.querySelectorAll('.tab');
         const contents = document.querySelectorAll('.history-content');
-
         tabs.forEach((tab, index) => {
             tab.addEventListener('click', () => {
                 tabs.forEach(t => t.classList.remove('active'));
                 contents.forEach(c => c.style.display = 'none');
-                
                 tab.classList.add('active');
                 document.getElementById('history-' + index).style.display = 'block';
             });
