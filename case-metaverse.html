@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咪咕视频直播延时审核系统 - 上海索涵智能科技有限公司</title>
+    <style>
+        /* ================= 全局样式 ================= */
+        :root { --main-black: #000; --main-white: #fff; --text-gray: #666; --bg-gray: #f9f9f9; --accent-yellow: #eebd48; }
+        body { font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.8; background-color: #f4f5f7; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* ================= 导航栏 ================= */
+        nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
+        .logo-container { display: flex; align-items: center; }
+        .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a:hover { color: #aaa; }
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
+
+        /* ================= 主体卡片容器样式（与参考截图风格保持一致） ================= */
+        .page-content-wrapper { max-width: 900px; margin: 40px auto; background: var(--main-white); padding: 50px 60px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        
+        .case-header { text-align: center; border-bottom: 1px solid #eee; padding-bottom: 30px; margin-bottom: 40px; }
+        .case-header h1 { font-size: 30px; margin-bottom: 15px; font-weight: normal; color: #111; letter-spacing: 1px; }
+        .case-meta { font-size: 14px; color: var(--text-gray); }
+        
+        .article-content { font-size: 16px; color: #444; text-align: justify; }
+        .article-content h3 { font-size: 20px; color: #111; margin-top: 40px; margin-bottom: 20px; border-left: 4px solid var(--accent-yellow); padding-left: 12px; }
+        .article-content h4 { font-size: 17px; color: #222; margin-top: 25px; margin-bottom: 10px; }
+        .article-content p { margin-bottom: 20px; text-indent: 0em; }
+        
+        .article-img-box { margin: 35px 0; text-align: center; }
+        .article-img-box img { max-width: 85%; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .img-caption { font-size: 13px; color: #888; margin-top: 12px; text-align: center; }
+
+        .back-btn-box { text-align: center; margin-top: 50px; }
+        .btn-back { display: inline-block; background: var(--main-black); color: #fff; padding: 12px 35px; border-radius: 4px; transition: background 0.3s; font-size: 15px; }
+        .btn-back:hover { background: #333; }
+
+        /* ================= 页脚 ================= */
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 40px 20px; font-size: 13px; }
+        footer p { margin: 5px 0; }
+
+        /* ================= 响应式调整 ================= */
+        @media (max-width: 768px) {
+            .nav-inner { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .lang-switch { text-align: center; }
+            .page-content-wrapper { padding: 25px 20px; margin: 15px; }
+            .case-header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner container">
+            <a href="index.html#home" class="logo-container">
+                <img src="logo.png" alt="上海索涵智能科技有限公司">
+            </a>
+            <div class="nav-links">
+                <a href="index.html#home">首页</a>
+                <a href="index.html#about">关于我们</a>
+                <a href="index.html#services">服务领域</a>
+                <a href="index.html#cases">客户案例</a>
+                <a href="index.html#contact">联系我们</a>
+            </div>
+            <a href="en.html" class="lang-switch">English</a>
+        </div>
+    </nav>
+
+    <!-- 模仿截图的居中白底圆角大卡片容器 -->
+    <div class="page-content-wrapper">
+        
+        <!-- 案例头部 -->
+        <div class="case-header">
+            <h1>咪咕视频直播延时审核系统集成与交付</h1>
+            <div class="case-meta">发布时间：2024-05-15 &nbsp;|&nbsp; 业务领域：广播电视与融媒体 &nbsp;|&nbsp; 文章来源：《影视制作》</div>
+        </div>
+
+        <!-- 案例正文内容 -->
+        <div class="article-content">
+            <p><span style="color:#888; font-size: 14px;">文章来源：《影视制作》 文/咪咕视讯科技有限公司 姚少康 张益维</span></p>
+            
+            <p><strong>引言：</strong>随着咪咕视讯业务版图扩张，大量的体育赛事信号、Liveshow 现场直播、二台制作等直播形态的业务全面铺开，其中境外体育赛事等外来信号以及节目制作过程具有极高的即时性，存在诸多不确定因素和安全隐患，为避免直播过程中出现意外和敏感信息，需要在较短的延时时长范围内降低直播播出风险，处理好直播信号的安全审核问题，并以最快最直接的方式进行应急处理，完成安全垫播片或广告片的插播功能。因此咪咕视讯直播延时审核系统需要在直播过程中通过对画面和声音的判断，对敏感内容作出快速响应，切换安全垫片，保障直播内容的安全播出。</p>
+            <p>我公司联合咪咕视讯打造了具备 5.1.4 监听能力的 4K 超高清审片室系统，为众多体育赛事的安全播出保驾护航。</p>
+
+            <h3>1、系统组成和设计思路</h3>
+            <p>为了满足咪咕直播延时审核系统业务需求和技术目标，整个系统底层采用 4K-12G 基带架构，向下兼容 HD 模式。系统内信号格式为：分辨率 3840×2160，帧率 50P，支持 HDR 高动态范围，HLG 和 BT.2020 宽色域。最大满足 5 个工位主备信号同时并发审核的要求。系统从技术标准上仍然适配咪咕现有演播室集群 4K SMPTE 2110 的 IP 技术架构，符合 IP+ 基带的设计理念。</p>
+
+            <div class="article-img-box">
+                <img src="case-migu-arch.png" alt="系统架构示意图">
+                <div class="img-caption">图1：系统整体流程与底层架构示意图</div>
+            </div>
+
+            <h3>2、系统组成</h3>
+            <p>咪咕直播延时审核系统主要由 6 个子系统组成，包括信号 I/O 处理系统、延时系统、信号调度及应急切换系统、监听监看系统、垫片回放系统、通话系统。</p>
+
+            <div class="article-img-box">
+                <img src="case-migu-subsystems.png" alt="系统组成图">
+                <div class="img-caption">图2：系统组成示意图</div>
+            </div>
+
+            <p>信号 I/O 处理系统包含编解码系统和 IP 视音频转换系统，主要负责系统内信号输入与输出，以及不同 IP 信号格式与基带信号之间的互相转换；延时系统对系统内信号进行延时处理，负责信号的延时时长范围设定；监听监看系统，负责系统内所有信号显示呈现，支持多画面分割技术；支持系统内时钟信号、画分源名和音频电平的显示；信号调度及应急切换系统负责内部所有信号的调度分配及播出信号的应急处理，在突发情况下，可提供最快最直接的播出应急保障；垫片回放系统支持实时录制和慢动作回放以及循环垫片播放，为播控系统提供稳定、可靠的安全替换内容；通话系统满足咪咕播控室与演播室、调度中心及总控之间的双向通话功能。</p>
+
+            <div class="article-img-box">
+                <img src="case-migu-flow.png" alt="系统整体流程图">
+                <div class="img-caption">图3：系统整体信号流向图</div>
+            </div>
+
+            <h3>3、系统工作原理与设计特点</h3>
+            <p>直播延时审核系统的工作原理，是以基带矩阵作为整个系统架构的核心枢纽，IP 信号源经过信号 I/O 处理系统转换为基带信号进入矩阵，由矩阵进行信号分配和路由的指派，其中将需要进行延时的信号调度至延时系统，并设定有效的延时时长，延时后的信号再环出作为矩阵的输入源指派至下一级信号 I/O 处理系统，完成信号的播出。</p>
+            <p>在整个过程中，审核员只需要监看和监听延时前的画面和声音，对直播内容进行审核和判断，如需进行信号的应急播控，审核员可在有效的延时时长范围内，通过矩阵应急面板执行切换操作，将安全垫片替换延时后的直播信号，以此实现实时的内容播控，待直播内容完全脱敏后再将延时后的直播信号恢复切回。</p>
+
+            <h4>技术亮点与核心优势：</h4>
+            <ul>
+                <li><strong>信号格式高兼容性：</strong>采用基带 + IP 的组合形式，兼顾通用互联网流媒体 IP 协议与 ST 2110 无压缩 IP 信号，使 I/O 结构更为灵活多变。</li>
+                <li><strong>多路并发审核：</strong>同时满足 5 个独立的审核工位，每个工位具备独立的监听、监看环境，支持 10 路主备信号并发审核。</li>
+                <li><strong>高冗余与安全性：</strong>采用多级冗余架构，每级子系统的核心设备主备冗余，子系统间为双链路结构配置，并配备主备冗余电源自动倒换。</li>
+            </ul>
+
+            <div class="article-img-box">
+                <img src="case-migu-main-workstation.png" alt="主工位工作状态">
+                <div class="img-caption">图4：主工位工作状态及监看画面</div>
+            </div>
+
+            <div class="article-img-box">
+                <img src="case-migu-sub-workstation.png" alt="副工位工作状态">
+                <div class="img-caption">图5：副工位工作状态</div>
+            </div>
+
+            <div class="article-img-box">
+                <img src="case-migu-room.png" alt="4K审片室全貌">
+                <div class="img-caption">图6：4K 审片室全貌</div>
+            </div>
+
+            <h3>4、系统设计方案总结</h3>
+            <p>直播延时审核系统是咪咕视讯自主设计，与上海索涵智能科技有限公司共同搭建开发的一套基于直播态的内容安全审核系统。它贴合咪咕自有演播室实际业务情况，是实现咪咕视讯内容生产流程中直播信号延时播控、内容安全审核的核心系统之一。</p>
+            <p>该系统实现了咪咕视讯对于演播室生产流程中内容安全审核环节的全面覆盖，做到不留盲区、不留死角、对意识形态问题“零容忍”、“零出现”。自系统建设以来，运行稳定，顺利完成了上千场播控审核，大大提升了直播业务的安全性，确保了播出的顺利进行。</p>
+
+            <div class="article-img-box">
+                <img src="case-migu-drawings.png" alt="系统图纸">
+                <div class="img-caption">图7：系统设计图纸</div>
+            </div>
+
+            <div class="back-btn-box">
+                <a href="index.html#cases" class="btn-back">返回首页查看更多案例</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>版权所有：上海索涵智能科技有限公司</p>
+        <p>沪ICP备2023018717号</p>
+        <p>本网站支持 IPv6</p>
+    </footer>
+
+</body>
+</html>
