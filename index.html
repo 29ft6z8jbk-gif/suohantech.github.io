@@ -24,8 +24,54 @@
         .nav-links a:hover { color: #aaa; }
         .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
-        /* ================= 首屏 Banner ================= */
-        .hero { background: linear-gradient(135deg, #111 0%, #2a1b38 50%, #111 100%); color: var(--main-white); text-align: center; padding: 150px 20px; position: relative; }
+        /* ================= 首屏 Banner (支持多图轮播背景) ================= */
+        .hero { 
+            position: relative;
+            width: 100%;
+            height: 100vh; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--main-white);
+            background-color: #111;
+        }
+        .bg-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slide.active { opacity: 1; }
+        .bg-slideshow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45); /* 45% 黑色遮罩，确保文字清晰 */
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
         .hero h1 { font-size: 48px; letter-spacing: 5px; margin-bottom: 10px; font-weight: normal; }
         .hero p { font-size: 24px; font-weight: 300; letter-spacing: 2px; }
 
@@ -137,9 +183,17 @@
         </div>
     </nav>
 
+    <!-- 首屏 Banner：多图轮播背景 -->
     <section id="home" class="hero">
-        <h1>互惠双赢·合作创新</h1>
-        <p>Mutual benefit and win-win · cooperation innovation</p>
+        <div class="bg-slideshow">
+            <div class="slide active" style="background-image: url('image1.jpg');"></div>
+            <div class="slide" style="background-image: url('image2.jpg');"></div>
+            <div class="slide" style="background-image: url('image3.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <h1>互惠双赢·合作创新</h1>
+            <p>Mutual benefit and win-win · cooperation innovation</p>
+        </div>
     </section>
 
     <section id="about" class="container">
@@ -379,6 +433,7 @@
     </footer>
 
     <script>
+        // 1. 发展历程选项卡切换逻辑
         const tabs = document.querySelectorAll('.tab');
         const contents = document.querySelectorAll('.history-content');
         tabs.forEach((tab, index) => {
@@ -389,6 +444,19 @@
                 document.getElementById('history-' + index).style.display = 'block';
             });
         });
+
+        // 2. 首屏 Banner 背景图自动轮播逻辑
+        const slides = document.querySelectorAll('.bg-slideshow .slide');
+        let currentIndex = 0;
+        const intervalTime = 4000; // 每隔 4 秒切换一张图片（可修改毫秒数）
+
+        function nextSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextSlide, intervalTime);
     </script>
 </body>
 </html>
