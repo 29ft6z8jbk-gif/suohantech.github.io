@@ -56,7 +56,18 @@
         .services-bg { background-color: var(--bg-gray); }
         .service-item { display: flex; gap: 30px; margin-bottom: 40px; border-bottom: 1px dashed #ddd; padding-bottom: 40px; }
         .service-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-        .service-img { flex: 0 0 250px; height: 160px; object-fit: cover; border-radius: 8px; background: #e0e0e0; }
+        
+        /* ---------- 核心修复区域：强制图片大小统一且不变形 ---------- */
+        .service-img { 
+            width: 280px !important; 
+            height: 180px !important; 
+            flex: 0 0 280px !important; 
+            object-fit: cover !important; 
+            border-radius: 8px; 
+            background: #e0e0e0; 
+        }
+        /* -------------------------------------------------------- */
+
         .service-content h3 { font-size: 18px; margin: 0 0 15px 0; font-weight: bold; }
         .service-content p { margin: 0; font-size: 14px; color: #666; text-align: justify; }
 
@@ -92,7 +103,7 @@
             .tabs { flex-wrap: wrap; }
             .tab { padding: 10px 15px; width: 33.33%; box-sizing: border-box; text-align: center; font-size: 13px; }
             .service-item { flex-direction: column; gap: 15px; }
-            .service-img { flex: auto; height: 200px; width: 100%; }
+            .service-img { flex: auto !important; height: 200px !important; width: 100% !important; }
         }
     </style>
 </head>
@@ -103,7 +114,6 @@
             <a href="#home" class="logo-container">
                 <img src="logo.png" alt="Shanghai Suohan Technology Co., Ltd.">
             </a>
-            
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
@@ -111,7 +121,6 @@
                 <a href="#cases">Cases</a>
                 <a href="#contact">Contact Us</a>
             </div>
-
             <a href="index.html" class="lang-switch">中文</a>
         </div>
     </nav>
