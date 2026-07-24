@@ -12,18 +12,19 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         
         /* Navigation */
-        nav { background-color: var(--main-black); color: var(--main-white); padding: 0; }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
         
         /* Logo Container & Image Styles (Matched to 60px height) */
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
 
-        .back-btn { color: var(--accent-yellow); font-size: 15px; border: 1px solid var(--accent-yellow); padding: 5px 15px; border-radius: 4px; transition: all 0.3s; }
-        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a:hover { color: #aaa; }
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
         /* Content Card */
-        .article-card { background-color: var(--main-white); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .article-card { background-color: var(--main-white); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 40px; }
         .article-title { font-size: 32px; font-weight: bold; text-align: center; margin-bottom: 20px; color: #111; }
         .article-meta { text-align: center; color: #888; font-size: 14px; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         
@@ -38,6 +39,7 @@
         
         @media (max-width: 768px) {
             .nav-inner { height: auto; padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
             .article-card { padding: 20px; }
             .article-title { font-size: 24px; }
         }
@@ -51,7 +53,14 @@
             <a href="index.html" class="logo-container">
                 <img src="logo.png" alt="Shanghai Suohan Technology Co., Ltd.">
             </a>
-            <a href="index.html" class="back-btn">Back to Home</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Contact</a>
+            </div>
+            <a href="#" class="lang-switch">中文</a>
         </div>
     </nav>
 
