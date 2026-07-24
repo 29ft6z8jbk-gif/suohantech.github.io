@@ -12,18 +12,23 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         
         /* 导航栏 */
-        nav { background-color: var(--main-black); color: var(--main-white); padding: 0; }
-        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
         
-        /* 修改：Logo 容器及图片样式，高度设为 60px 与其他页面保持一致 */
+        /* Logo 容器及图片样式 */
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
 
-        .back-btn { color: var(--accent-yellow); font-size: 15px; border: 1px solid var(--accent-yellow); padding: 5px 15px; border-radius: 4px; transition: all 0.3s; }
-        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
+        /* 导航菜单链接 */
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { color: var(--main-white); transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-yellow); }
+        
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 50px; text-align: right; }
 
         /* 内容区卡片 */
-        .article-card { background-color: var(--main-white); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .article-card { background-color: var(--main-white); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 40px; }
         .article-title { font-size: 32px; font-weight: bold; text-align: center; margin-bottom: 20px; color: #111; }
         .article-meta { text-align: center; color: #888; font-size: 14px; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
         
@@ -38,6 +43,7 @@
         
         @media (max-width: 768px) {
             .nav-inner { height: auto; padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
             .article-card { padding: 20px; }
             .article-title { font-size: 24px; }
         }
@@ -47,11 +53,22 @@
 
     <nav>
         <div class="nav-inner">
-            <!-- 修改：将文字替换为 logo 图片引用，确保根目录下有 logo.png，并与前面页面的尺寸对齐 -->
+            <!-- Logo 图片 -->
             <a href="index.html" class="logo-container">
                 <img src="logo.png" alt="上海索涵智能科技有限公司">
             </a>
-            <a href="index.html" class="back-btn">返回首页</a>
+            <!-- 导航菜单项 -->
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="index.html#about">关于我们</a>
+                <a href="index.html#services">主营业务</a>
+                <a href="index.html#cases">案例中心</a>
+                <a href="index.html#contact">联系我们</a>
+            </div>
+            <!-- 右侧操作区：语言切换/返回 -->
+            <div class="nav-right">
+                <a href="case-detail-en.html" class="lang-switch">EN</a>
+            </div>
         </div>
     </nav>
 
