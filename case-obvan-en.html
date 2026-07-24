@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Details - Shanghai Suohan Technology Co., Ltd.</title>
+    <title>All-IP UHD OB Van System - Shanghai Suohan Technology Co., Ltd.</title>
     <style>
         :root { --main-black: #000; --main-white: #fff; --text-gray: #666; --bg-gray: #f9f9f9; --accent-yellow: #eebd48; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.8; background-color: var(--bg-gray); }
@@ -19,9 +19,16 @@
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
 
+        /* Navigation Links */
         .nav-links { display: flex; gap: 40px; }
-        .nav-links a:hover { color: #aaa; }
-        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
+        .nav-links a { color: var(--main-white); transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-yellow); }
+        
+        /* Right Section: Back Button & Language Switch */
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .back-btn { color: var(--accent-yellow); font-size: 14px; border: 1px solid var(--accent-yellow); padding: 5px 12px; border-radius: 4px; transition: all 0.3s; }
+        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 50px; text-align: right; }
 
         /* Content Card */
         .article-card { background-color: var(--main-white); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 40px; }
@@ -49,18 +56,23 @@
 
     <nav>
         <div class="nav-inner">
-            <!-- Logo image with English company name translation and matched height -->
-            <a href="index.html" class="logo-container">
+            <!-- Logo Image with English Company Name Translation -->
+            <a href="index-en.html" class="logo-container">
                 <img src="logo.png" alt="Shanghai Suohan Technology Co., Ltd.">
             </a>
+            <!-- Navigation Links -->
             <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Services</a>
-                <a href="#">Case Studies</a>
-                <a href="#">Contact</a>
+                <a href="index-en.html">Home</a>
+                <a href="index-en.html#about">About Us</a>
+                <a href="index-en.html#services">Services</a>
+                <a href="index-en.html#cases">Case Studies</a>
+                <a href="index-en.html#contact">Contact</a>
             </div>
-            <a href="#" class="lang-switch">中文</a>
+            <!-- Right Section: Back to Home Button & Language Switch -->
+            <div class="nav-right">
+                <a href="index-en.html" class="back-btn">Back to Home</a>
+                <a href="case-obvan.html" class="lang-switch">中文</a>
+            </div>
         </div>
     </nav>
 
@@ -94,7 +106,7 @@
     </div>
 
     <footer>
-        <p>Copyright (C) 2016-2026 Shanghai Suohan Technology Co., Ltd. All Rights Reserved</p>
+        <p>Copyright (C) 2016-2026 Shanghai Suohan Technology Co., Ltd. All Rights Reserved.</p>
     </footer>
 
 </body>
