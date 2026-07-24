@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 页面未找到</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .error-container {
+            text-align: center;
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 100%;
+        }
+        /* 新增：Logo 的样式 */
+        .brand-logo {
+            max-width: 220px; /* 您可以根据实际 Logo 的长宽比调整这个数值 */
+            height: auto;
+            margin: 0 auto 30px auto; /* 居中显示，并与下方的 404 保持间距 */
+            display: block;
+        }
+        h1 {
+            font-size: 80px;
+            margin: 0 0 20px 0;
+            color: #eebd48; 
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .btn-home {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 15px;
+        }
+        .btn-home:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <!-- 新增：公司 Logo -->
+        <!-- 注意：推荐使用 /logo.png 这样的绝对路径，确保在多级目录错误时也能正常加载图片 -->
+        <img src="/logo.png" alt="上海索涵智能科技有限公司" class="brand-logo">
+        
+        <h1>404</h1>
+        <p>抱歉，您访问的页面正在建设中。</p>
+        <a href="/" class="btn-home">返回首页</a>
+    </div>
+</body>
+</html>
