@@ -16,12 +16,18 @@
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
         
-        /* 修改：Logo 容器及图片大小，与主页规范保持一致（高度设为 60px） */
+        /* Logo 容器及图片大小 */
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
         
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a:hover { color: #aaa; }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
+        .nav-links a:hover { color: var(--accent-yellow); transition: color 0.3s; }
+
+        /* ================= 右侧操作区（对齐与语言切换） ================= */
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .back-btn { color: var(--accent-yellow); font-size: 14px; border: 1px solid var(--accent-yellow); padding: 5px 12px; border-radius: 4px; transition: all 0.3s; }
+        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
         /* ================= 主体卡片容器 ================= */
         .page-content-wrapper { max-width: 1000px; margin: 40px auto; background: var(--main-white); padding: 50px 60px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
@@ -57,6 +63,7 @@
         @media (max-width: 768px) {
             .nav-inner { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .nav-right { flex-wrap: wrap; justify-content: center; }
             .page-content-wrapper { padding: 30px 20px; margin: 15px; }
             .case-header h1 { font-size: 24px; }
         }
@@ -66,16 +73,20 @@
 
     <nav>
         <div class="nav-inner container">
-            <!-- Logo 尺寸已调整为 height: 60px 与主页一致 -->
-            <a href="#" class="logo-container">
+            <a href="index.html#home" class="logo-container">
                 <img src="logo.png" alt="上海索涵智能科技有限公司">
             </a>
             <div class="nav-links">
-                <a href="#">首页</a>
-                <a href="#">核心技术</a>
-                <a href="#">解决方案</a>
-                <a href="#">项目案例</a>
-                <a href="#">联系我们</a>
+                <a href="index.html#home">首页</a>
+                <a href="index.html#tech">核心技术</a>
+                <a href="index.html#services">解决方案</a>
+                <a href="index.html#cases">项目案例</a>
+                <a href="index.html#contact">联系我们</a>
+            </div>
+            <!-- 右侧对齐区域：包含返回首页按钮与语言切换选项 -->
+            <div class="nav-right">
+                <a href="index.html" class="back-btn">返回首页</a>
+                <a href="case-theater-en.html" class="lang-switch">English</a>
             </div>
         </div>
     </nav>
@@ -142,7 +153,7 @@
             <p>通过该PQC质量监控中心的落成，咪咕视讯实现了对海量超高清内容的标准化技术拦截与画质定级。配备高阶音频分析能力的示波器以及5.1.4监听套件的AQC音频监测系统与高阶数据分析的视频VQC监测系统机制相结合，前方信号采用流媒体的形式实时进行拉流，配合本地化基带矩阵/多画面监看系统。不仅大幅提升了视频质量监控的效率，更为后续的8K/4K超高清重大赛事直播与点播业务筑起了坚实的质量技术防线。</p>
 
             <div class="back-btn-box">
-                <a href="#" class="btn-back">返回解决方案列表</a>
+                <a href="index.html#cases" class="btn-back">返回解决方案列表</a>
             </div>
         </div>
     </div>
