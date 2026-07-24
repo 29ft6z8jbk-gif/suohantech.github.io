@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Details - Shanghai Suohan Technology Co., Ltd.</title>
+    <style>
+        :root { --main-black: #000; --main-white: #fff; --text-gray: #666; --bg-gray: #f9f9f9; --accent-yellow: #eebd48; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.8; background-color: var(--bg-gray); }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Navigation */
+        nav { background-color: var(--main-black); color: var(--main-white); padding: 0; }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        
+        /* Logo Container & Image Styles (Matched to 60px height) */
+        .logo-container { display: flex; align-items: center; }
+        .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
+
+        .back-btn { color: var(--accent-yellow); font-size: 15px; border: 1px solid var(--accent-yellow); padding: 5px 15px; border-radius: 4px; transition: all 0.3s; }
+        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
+
+        /* Content Card */
+        .article-card { background-color: var(--main-white); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .article-title { font-size: 32px; font-weight: bold; text-align: center; margin-bottom: 20px; color: #111; }
+        .article-meta { text-align: center; color: #888; font-size: 14px; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        
+        /* Body Typography */
+        .article-content { font-size: 16px; color: #444; line-height: 2; text-align: justify; }
+        .article-content h3 { font-size: 20px; color: #222; margin-top: 40px; border-left: 4px solid var(--accent-yellow); padding-left: 10px; }
+        .article-content p { margin-bottom: 20px; }
+        .article-image-wrapper { margin: 40px 0; text-align: center; }
+        .article-image-wrapper span { display: block; font-size: 13px; color: #999; margin-top: 10px; }
+        
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 30px 20px; font-size: 13px; margin-top: 50px;}
+        
+        @media (max-width: 768px) {
+            .nav-inner { height: auto; padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .article-card { padding: 20px; }
+            .article-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <!-- Logo image with English company name translation and matched height -->
+            <a href="index.html" class="logo-container">
+                <img src="logo.png" alt="Shanghai Suohan Technology Co., Ltd.">
+            </a>
+            <a href="index.html" class="back-btn">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="article-card">
+            <!-- Article Title -->
+            <h1 class="article-title">System Integration and Delivery of All-IP UHD OB Van</h1>
+            <div class="article-meta">Published: 2023-11-20 | Business Area: Broadcasting & Converged Media</div>
+
+            <div class="article-content">
+                <!-- Introduction Paragraph -->
+                <p>With the advent of the 5G era and the development of the ultra-high-definition video industry, full-IP architecture has become an inevitable trend in the broadcasting and television industry. In this project, our company undertook the core system integration of a new generation of ultra-high-definition OB (Outside Broadcast) Van for a broadcasting station, adopting an all-IP architecture design based on the SMPTE ST 2110 standard.</p>
+                
+                <!-- Insert Image -->
+                <div class="article-image-wrapper">
+                    <img src="case-obvan.jpg" alt="OB Van Exterior and Interior">
+                    <span>Figure 1: Interior View of the Delivered All-IP UHD OB Van</span>
+                </div>
+
+                <!-- Subheading and Content -->
+                <h3>Project Highlights & Technical Specifications</h3>
+                <p>Centered around the All-IP converged production and scheduling center, the system achieves seamless bridging between uncompressed baseband signals and modern IP architecture. The core router features concurrent processing capabilities for hundreds of UHD signals, significantly reducing cable scale and system weight, thereby securing the mobility of the OB Van.</p>
+                <p>
+                    In terms of equipment configuration, we deployed high-density access gateways (REG-1024), intelligent cross-conversion processing units (MCG-1018), and multi-channel multi-viewers supporting 100G interfaces (MVG-2206). Meanwhile, the system integrates studio cameras, ensuring that the OB Van delivers exceptional color accuracy and ultra-low latency when handling large-scale variety galas and major sports broadcasting events.
+                </p>
+
+                <h3>Customer Feedback</h3>
+                <p>Since its delivery, the system has successfully supported multiple live broadcasting missions for major New Year countdown galas and international sports events. The client highly praised the system's exceptional stability, flexible routing scheduling, and our team's professional competence during technical commissioning.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright (C) 2016-2026 Shanghai Suohan Technology Co., Ltd. All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
