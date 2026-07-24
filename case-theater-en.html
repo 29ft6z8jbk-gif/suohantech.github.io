@@ -16,12 +16,18 @@
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
         
-        /* Logo Container & Image Styles (Updated to height: 60px to match homepage) */
+        /* Logo Container & Image Styles */
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
         
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a:hover { color: #aaa; }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
+        .nav-links a:hover { color: var(--accent-yellow); transition: color 0.3s; }
+
+        /* ================= Right Action Area ================= */
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .back-btn { color: var(--accent-yellow); font-size: 14px; border: 1px solid var(--accent-yellow); padding: 5px 12px; border-radius: 4px; transition: all 0.3s; }
+        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
 
         /* ================= Main Card Container ================= */
         .page-content-wrapper { max-width: 1000px; margin: 40px auto; background: var(--main-white); padding: 50px 60px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
@@ -57,6 +63,7 @@
         @media (max-width: 768px) {
             .nav-inner { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .nav-right { flex-wrap: wrap; justify-content: center; }
             .page-content-wrapper { padding: 30px 20px; margin: 15px; }
             .case-header h1 { font-size: 24px; }
         }
@@ -66,16 +73,21 @@
 
     <nav>
         <div class="nav-inner container">
-            <!-- Logo size matched to homepage (height: 60px) -->
-            <a href="#" class="logo-container">
+            <a href="index-en.html#home" class="logo-container">
                 <img src="logo.png" alt="Shanghai Suohan Technology Co., Ltd.">
             </a>
+            <!-- Updated navigation items to match the reference image's structure -->
             <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Core Technologies</a>
-                <a href="#">Solutions</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact Us</a>
+                <a href="index-en.html#home">Home</a>
+                <a href="index-en.html#about">About Us</a>
+                <a href="index-en.html#services">Services</a>
+                <a href="index-en.html#cases">Cases</a>
+                <a href="index-en.html#contact">Contact Us</a>
+            </div>
+            <!-- Added Right Action Area for Back button and Language Switch -->
+            <div class="nav-right">
+                <a href="index-en.html" class="back-btn">Back to Home</a>
+                <a href="case-theater.html" class="lang-switch">中文</a>
             </div>
         </div>
     </nav>
@@ -142,7 +154,7 @@
             <p>Through the successful deployment of this PQC Quality Control Center, Migu Video has achieved standardized technical interception and image quality grading for massive volumes of UHD content. The combination of AQC audio monitoring systems—equipped with advanced audio analysis-capable waveform monitors and 5.1.4 monitoring suites—and VQC video monitoring systems with high-level data analysis mechanisms utilizes real-time streaming pull for frontline signals, coordinated with localized baseband matrices and multi-viewer systems. This not only significantly enhances video quality monitoring efficiency but also establishes a robust quality and technical defense line for subsequent 8K/4K UHD major sports live broadcasts and on-demand services.</p>
 
             <div class="back-btn-box">
-                <a href="#" class="btn-back">Back to Solutions List</a>
+                <a href="index-en.html#cases" class="btn-back">Back to Cases</a>
             </div>
         </div>
     </div>
