@@ -15,7 +15,11 @@
         /* ================= 导航栏 ================= */
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
-        .logo-container { display: flex; align-items: center; font-weight: bold; font-size: 18px; }
+        
+        /* 修改：Logo 容器及图片样式，高度设为 60px 与其他页面保持一致 */
+        .logo-container { display: flex; align-items: center; }
+        .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
+
         .nav-links { display: flex; gap: 40px; }
         .nav-links a:hover { color: #aaa; }
         .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
@@ -57,7 +61,10 @@
 
     <nav>
         <div class="nav-inner container">
-            <a href="#" class="logo-container">上海索涵智能科技有限公司</a>
+            <!-- 修改：将文字替换为 logo 图片引用，确保根目录下有 logo.png -->
+            <a href="#" class="logo-container">
+                <img src="logo.png" alt="上海索涵智能科技有限公司">
+            </a>
             <div class="nav-links">
                 <a href="#">首页</a>
                 <a href="#">关于我们</a>
