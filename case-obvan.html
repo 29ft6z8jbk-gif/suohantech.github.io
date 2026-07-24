@@ -24,8 +24,11 @@
         .nav-links a { color: var(--main-white); transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent-yellow); }
         
-        .nav-right { display: flex; align-items: center; gap: 20px; }
-        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 50px; text-align: right; }
+        /* 右侧操作区：返回按钮、语言切换等 */
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .back-btn { color: var(--accent-yellow); font-size: 14px; border: 1px solid var(--accent-yellow); padding: 5px 12px; border-radius: 4px; transition: all 0.3s; }
+        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
+        .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 30px; text-align: right; }
 
         /* 内容区卡片 */
         .article-card { background-color: var(--main-white); padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: 40px; }
@@ -65,8 +68,9 @@
                 <a href="index.html#cases">案例中心</a>
                 <a href="index.html#contact">联系我们</a>
             </div>
-            <!-- 右侧操作区：语言切换/返回 -->
+            <!-- 右侧操作区：新增“返回首页”按钮与语言切换 -->
             <div class="nav-right">
+                <a href="index.html" class="back-btn">返回首页</a>
                 <a href="case-detail-en.html" class="lang-switch">EN</a>
             </div>
         </div>
