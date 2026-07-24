@@ -16,9 +16,9 @@
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
         
-        /* 修改：Logo 容器及图片样式 */
+        /* 修改：Logo 容器及图片大小，与主页规范保持一致（高度设为 60px） */
         .logo-container { display: flex; align-items: center; }
-        .logo-container img { height: 45px; max-width: 250px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
+        .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
         
         .nav-links { display: flex; gap: 40px; }
         .nav-links a:hover { color: #aaa; }
@@ -66,7 +66,7 @@
 
     <nav>
         <div class="nav-inner container">
-            <!-- 修改：此处将文字替换为了 logo 图片引用，确保根目录下有 logo.png -->
+            <!-- Logo 尺寸已调整为 height: 60px 与主页一致 -->
             <a href="#" class="logo-container">
                 <img src="logo.png" alt="上海索涵智能科技有限公司">
             </a>
