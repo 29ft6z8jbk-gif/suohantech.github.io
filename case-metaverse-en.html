@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Migu Video Live Delay & Content Review System - Shanghai Suohan Technology Co., Ltd.</title>
+    <title>Migu Video Live Delay PQC Quality Monitoring Center - Shanghai Suohan Technology Co., Ltd.</title>
     <style>
         /* ================= Global Styles ================= */
         :root { --main-black: #000; --main-white: #fff; --text-gray: #666; --bg-gray: #f9f9f9; --accent-yellow: #eebd48; }
@@ -17,9 +17,13 @@
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
         .logo-container { display: flex; align-items: center; }
         .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; }
-        .nav-links { display: flex; gap: 40px; }
+        .nav-links { display: flex; gap: 40px; align-items: center; }
         .nav-links a:hover { color: #aaa; }
         .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
+
+        /* ================= Back to Home Button ================= */
+        .back-btn { color: var(--accent-yellow); font-size: 14px; border: 1px solid var(--accent-yellow); padding: 5px 12px; border-radius: 4px; transition: all 0.3s; margin-left: 10px; }
+        .back-btn:hover { background-color: var(--accent-yellow); color: var(--main-black); }
 
         /* ================= Content Wrapper ================= */
         .page-content-wrapper { max-width: 900px; margin: 40px auto; background: var(--main-white); padding: 50px 60px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
@@ -68,6 +72,8 @@
                 <a href="en.html#services">Services</a>
                 <a href="en.html#cases">Cases</a>
                 <a href="en.html#contact">Contact</a>
+                <!-- Back to Home Button added here -->
+                <a href="en.html" class="back-btn">Back to Home</a>
             </div>
             <a href="index.html" class="lang-switch">中文</a>
         </div>
@@ -76,18 +82,18 @@
     <div class="page-content-wrapper">
         
         <div class="case-header">
-            <h1>Integration and Delivery of Migu Video Live Delay & Content Review System</h1>
+            <h1>Integration and Delivery of Migu Video Live Delay PQC Quality Monitoring Center</h1>
             <div class="case-meta">Published: 2024-05-15 &nbsp;|&nbsp; Domain: Broadcasting & Media &nbsp;|&nbsp; Source: "Video Production"</div>
         </div>
 
         <div class="article-content">
             <p><span style="color:#888; font-size: 14px;">Source: "Video Production" | Authors: Yao Shaokang, Zhang Yiwei (Migu Video Technology Co., Ltd.)</span></p>
             
-            <p><strong>Introduction:</strong> With the expansion of Migu Video's business scope, a wide variety of live broadcasting formats—such as sports events, live shows, and secondary productions—have been fully rolled out. External signals like overseas sports events and program production processes feature extreme immediacy, harboring various uncertainties and security risks. To prevent unexpected and sensitive information during live broadcasts, it is crucial to reduce broadcasting risks within a short delay window, properly handle live signal security reviews, and execute emergency interventions in the fastest and most direct manner to insert safe filler videos or commercials. Therefore, Migu's live delay and content review system needs to make rapid judgments on video and audio content during live transmission, respond swiftly to sensitive material, switch to safe filler content, and guarantee secure broadcasting.</p>
-            <p>Our company, in partnership with Migu Video, has built a 4K UHD review room system equipped with 5.1.4 immersive monitoring capabilities, escorting the secure broadcasting of numerous prestigious sports events.</p>
+            <p><strong>Introduction:</strong> With the expansion of Migu Video's business scope, a wide variety of live broadcasting formats—such as sports events, live shows, and secondary productions—have been fully rolled out. External signals like overseas sports events and program production processes feature extreme immediacy, harboring various uncertainties and security risks. To prevent unexpected and sensitive information during live broadcasts, it is crucial to reduce broadcasting risks within a short delay window, properly handle live signal quality monitoring, and execute emergency interventions in the fastest and most direct manner to insert safe filler videos or commercials. Therefore, Migu's live delay PQC monitoring system needs to make rapid judgments on video and audio content during live transmission, respond swiftly to sensitive material, switch to safe filler content, and guarantee secure broadcasting.</p>
+            <p>Our company, in partnership with Migu Video, has built a 4K UHD PQC monitoring center equipped with 5.1.4 immersive monitoring capabilities, escorting the secure broadcasting of numerous prestigious sports events.</p>
 
             <h3>1. System Composition and Design Concept</h3>
-            <p>To meet the operational requirements and technical goals of Migu's live delay review system, the underlying infrastructure adopts a 4K-12G baseband architecture with backward compatibility for HD mode. The internal signal format features a resolution of 3840×2160, a frame rate of 50P, support for HDR high dynamic range, HLG, and BT.2020 wide color gamut. It fully satisfies the concurrent review requirements of primary and backup signals across 5 workstations. From a technical standards perspective, the system remains compatible with Migu's existing studio cluster 4K SMPTE 2110 IP architecture, aligning with the "IP + Baseband" design philosophy.</p>
+            <p>To meet the operational requirements and technical goals of Migu's live delay PQC monitoring system, the underlying infrastructure adopts a 4K-12G baseband architecture with backward compatibility for HD mode. The internal signal format features a resolution of 3840×2160, a frame rate of 50P, support for HDR high dynamic range, HLG, and BT.2020 wide color gamut. It fully satisfies the concurrent monitoring requirements of primary and backup signals across 5 workstations. From a technical standards perspective, the system remains compatible with Migu's existing studio cluster 4K SMPTE 2110 IP architecture, aligning with the "IP + Baseband" design philosophy.</p>
 
             <div class="article-img-box">
                 <img src="case-migu-arch.png" alt="System Architecture">
@@ -95,7 +101,7 @@
             </div>
 
             <h3>2. System Subsystems</h3>
-            <p>The Migu Live Delay Review System primarily consists of 6 subsystems: Signal I/O Processing System, Delay System, Signal Routing & Emergency Switching System, Monitoring & Multiviewer System, Filler Playback System, and Intercom System.</p>
+            <p>The Migu Live Delay PQC Monitoring System primarily consists of 6 subsystems: Signal I/O Processing System, Delay System, Signal Routing & Emergency Switching System, Monitoring & Multiviewer System, Filler Playback System, and Intercom System.</p>
 
             <div class="article-img-box">
                 <img src="case-migu-subsystems.png" alt="Subsystems">
@@ -110,13 +116,13 @@
             </div>
 
             <h3>3. Working Principles and Design Highlights</h3>
-            <p>The operating principle of the live delay review system relies on the baseband router as the core hub of the system architecture. IP signal sources are converted into baseband signals via the Signal I/O Processing System into the router, which handles signal distribution and routing assignment. Signals requiring delay are routed to the delay system with a configured delay duration. The delayed signals are then looped back into the router as input sources assigned to the next-stage I/O processing system for transmission.</p>
-            <p>Throughout the process, reviewers monitor and listen to the pre-delay video and audio to evaluate live content. If emergency broadcasting intervention is needed, operators can use the router emergency panel within the valid delay window to substitute the delayed live signal with a safe filler, achieving real-time content control until the broadcast is completely desensitized, after which normal live signals are restored.</p>
+            <p>The operating principle of the live delay PQC monitoring system relies on the baseband router as the core hub of the system architecture. IP signal sources are converted into baseband signals via the Signal I/O Processing System into the router, which handles signal distribution and routing assignment. Signals requiring delay are routed to the delay system with a configured delay duration. The delayed signals are then looped back into the router as input sources assigned to the next-stage I/O processing system for transmission.</p>
+            <p>Throughout the process, operators monitor and listen to the pre-delay video and audio to evaluate live content. If emergency broadcasting intervention is needed, operators can use the router emergency panel within the valid delay window to substitute the delayed live signal with a safe filler, achieving real-time content control until the broadcast is completely desensitized, after which normal live signals are restored.</p>
 
             <h4>Technical Highlights & Core Advantages:</h4>
             <ul>
                 <li><strong>High Signal Format Compatibility:</strong> Combines baseband and IP forms, accommodating both general internet streaming IP protocols and ST 2110 uncompressed IP signals for flexible I/O structures.</li>
-                <li><strong>Multi-Channel Concurrent Review:</strong> Supports 5 independent review workstations simultaneously, each with independent monitoring environments, handling 10 concurrent primary/backup signal reviews.</li>
+                <li><strong>Multi-Channel Concurrent Review:</strong> Supports 5 independent PQC workstations simultaneously, each with independent monitoring environments, handling 10 concurrent primary/backup signal monitoring processes.</li>
                 <li><strong>Multi-Level Redundancy & Safety:</strong> Adopts a multi-level redundant architecture with primary/backup redundancy for core devices across all subsystems, dual-link structural configurations, and automated redundant power supply switching.</li>
             </ul>
 
@@ -132,12 +138,12 @@
 
             <div class="article-img-box">
                 <img src="case-migu-room.png" alt="4K Review Room">
-                <div class="img-caption">Figure 6: Overview of the 4K Review Room</div>
+                <div class="img-caption">Figure 6: Overview of the 4K PQC Monitoring Center</div>
             </div>
 
             <h3>4. Conclusion and Achievements</h3>
-            <p>The live delay review system is independently designed by Migu Video and jointly developed and constructed with Shanghai Suohan Technology Co., Ltd. It closely fits Migu's practical studio business scenarios and serves as a core system for live signal delay switching and content security review within Migu's content production workflow.</p>
-            <p>The system achieves comprehensive coverage of content security review links in studio production workflows, leaving no blind spots or dead angles, and enforcing a "zero-tolerance" policy on ideological issues. Since its deployment, the system has operated steadily, successfully completing thousands of broadcast reviews, greatly enhancing live business security and ensuring smooth broadcasting operations.</p>
+            <p>The live delay PQC monitoring system is independently designed by Migu Video and jointly developed and constructed with Shanghai Suohan Technology Co., Ltd. It closely fits Migu's practical studio business scenarios and serves as a core system for live signal delay switching and content quality monitoring within Migu's content production workflow.</p>
+            <p>The system achieves comprehensive coverage of quality monitoring links in studio production workflows, leaving no blind spots or dead angles, and enforcing a "zero-tolerance" policy on ideological issues. Since its deployment, the system has operated steadily, successfully completing thousands of broadcast reviews, greatly enhancing live business security and ensuring smooth broadcasting operations.</p>
 
             <div class="article-img-box">
                 <img src="case-migu-drawings.png" alt="System Drawings">
