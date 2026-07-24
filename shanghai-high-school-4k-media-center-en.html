@@ -15,7 +15,11 @@
         /* ================= Navigation ================= */
         nav { background-color: var(--main-black); color: var(--main-white); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; font-size: 15px; }
-        .logo-container { display: flex; align-items: center; font-weight: bold; font-size: 18px; }
+        
+        /* Logo 容器及图片样式（高度设为 60px 与其他页面保持一致） */
+        .logo-container { display: flex; align-items: center; }
+        .logo-container img { height: 60px; max-width: 300px; object-fit: contain; margin: 0; box-shadow: none; border-radius: 0; }
+
         .nav-links { display: flex; gap: 40px; }
         .nav-links a:hover { color: #aaa; }
         .lang-switch { color: var(--accent-yellow); font-weight: bold; min-width: 60px; text-align: right; }
@@ -57,7 +61,10 @@
 
     <nav>
         <div class="nav-inner container">
-            <a href="#" class="logo-container">Shanghai Suohan Intelligent Technology</a>
+            <!-- 将文字 Logo 替换为图片 Logo引用，并确保高度与其它页面统一 -->
+            <a href="#" class="logo-container">
+                <img src="logo.png" alt="Shanghai Suohan Intelligent Technology">
+            </a>
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#">About Us</a>
